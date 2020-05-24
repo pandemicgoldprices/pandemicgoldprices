@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 
 '''
 a function which scrapes a webpage

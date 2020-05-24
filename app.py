@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 from flask import Flask, render_template, jsonify
 
 from scrape import scrape
@@ -58,5 +58,5 @@ def updateMe():
 
 #run the app
 if __name__ == '__main__':
->>>>>>> 2251c79e3f08eddc4e5b4faace0417255cc6f6af
+
     app.run(debug=True)
