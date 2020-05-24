@@ -1,2 +1,3 @@
 DATA SOUCRES 
 goldpricehistroy1850to2011 : http://www.nma.org/pdf/gold/his_gold_prices.pdf
+older data : https://www.measuringworth.com/datasets/gold/result.php
