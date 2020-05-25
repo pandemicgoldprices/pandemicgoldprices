@@ -33,6 +33,11 @@ def getLatest():
     print(data[0])
     return data[0]
 
+def getDataDateRange(begin, end):
+    data = {}
+    return data
+
+
 '''
 FUNCTION WHICH CRETES SOME RANDOM DATA AND STORES IN THE DB
 '''
