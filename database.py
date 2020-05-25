@@ -41,7 +41,7 @@ def getDataDateRange(begin, end):
 '''
 FUNCTION WHICH CRETES SOME RANDOM DATA AND STORES IN THE DB
 '''
-def update():
+def update(newData):
     # Create connection variable
     conn = 'mongodb://localhost:27017'
 
@@ -55,7 +55,8 @@ def update():
     randomintTwo = random.randint(1,100001)
 
     #create some data
-    myData = {"key": randomintTwo, "value" : randomInt }
+    #myData = {"key": randomintTwo, "value" : randomInt }
+    myData = newData
 
     # insert mData into DB
     data = db.myDB
