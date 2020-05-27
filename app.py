@@ -12,6 +12,7 @@ app = Flask(__name__)
 
 #update()
 #index
+# added comment to sean branchgi
 @app.route('/')
 def index():
     # call to database to get latest data

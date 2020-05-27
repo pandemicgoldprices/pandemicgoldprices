@@ -12,3 +12,11 @@ my_key = ""
 fred = Fred(api_key=my_key)
 restart and run the notebook 
 
+
+1346–1350: The Black Death
+1899–1923: Sixth cholera pandemic
+1918–1920: Spanish flu (H1N1)
+1957–1958: Asian flu (H2N2)
+1968–1969: Hong Kong flu
+2009–2010: Swine flu (H1N1)
+2020: COVID-19
