@@ -1,9 +1,9 @@
 
 from flask import Flask, render_template, jsonify
 
-from scrape import scrape
+# from scrape import scrape
 
-from database import getLatest, update
+from dao.database import getLatest, update
 
 
 
@@ -23,41 +23,41 @@ def index():
 def updateMe():
 
     # call to database.py to update data
-    update()
+    #update()
 
     return index()
 
 #run the app
 if __name__ == '__main__':
-=======
-from flask import Flask, render_template, jsonify
+#=======
+# from flask import Flask, render_template, jsonify
 
-from scrape import scrape
+# from scrape import scrape
 
-from database import getLatest, update
+# from dao.database import getLatest, update
 
 
 
-# Create an instance of our Flask app.
-app = Flask(__name__)
+# # Create an instance of our Flask app.
+# app = Flask(__name__)
 
-#update()
-#index
-@app.route('/')
-def index():
-    # call to database to get latest data
-    data = getLatest()
-    return render_template('index.html', data = data )
+# #update()
+# #index
+# @app.route('/')
+# def index():
+#     # call to database to get latest data
+#     data = getLatest()
+#     return render_template('index.html', data = data )
 
-@app.route('/update')
-def updateMe():
+# @app.route('/update')
+# def updateMe():
 
-    # call to database.py to update data
-    update()
+#     # call to database.py to update data
+#     update()
 
-    return index()
+#     return index()
 
-#run the app
-if __name__ == '__main__':
+# #run the app
+# if __name__ == '__main__':
 
     app.run(debug=True)
