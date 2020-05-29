@@ -26,43 +26,17 @@ def getLatest():
 
     # Connect to a database. Will create one if not already available.
     # thid creates a schema called etlProject
-    db = client.etlProject
 
-    # get the record that was inserted last
-    data = db.myDB.find().sort('_id', -1)
-    print(data[0])
-    return data[0]
+    db = client.myDB.dowGoldHistory
+
+    # query the DB
+    dataOut = db.find().sort('_id', -1)
+    # count the records
+    results_count = str(dataOut.count())
+    print("results count :" + results_count)
+    # display top record
+    print(dataOut[0])
 
 def getDataDateRange(begin, end):
     data = {}
     return data
-
-
-'''
-FUNCTION WHICH CRETES SOME RANDOM DATA AND STORES IN THE DB
-'''
-
-
-    # Connect to a database. Will create one if not already available.
-    db = client.etlProject
-    # generate two random numbers
-    randomInt = random.randint(1,10001)
-    randomintTwo = random.randint(1,100001)
-
-    #create some data
-    #myData = {"key": randomintTwo, "value" : randomInt }
-    myData = newData
-
-    # insert mData into DB
-    data = db.myDB
-    post_id = data.insert_one(myData).inserted_id
-    print(post_id)
-
-#run this to test an insertion of data
-dummyData = [
-               { "item": "journal", "qty": 25, "status": "A", "tags": [ "blank", "red" ] },
-               { "item": "notebook", "qty": 50, "status": "A", "tags": [ "red", "blank" ] }
-
-            ]
-#run this to get the latest entry into the DB
-getLatest()

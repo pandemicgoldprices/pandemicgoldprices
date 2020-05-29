@@ -3,7 +3,11 @@ from flask import Flask, render_template, jsonify
 
 # from scrape import scrape
 
-from dao.database import getLatest, update
+from dao.database import getLatest
+
+from load_data import load
+
+load()
 
 
 
