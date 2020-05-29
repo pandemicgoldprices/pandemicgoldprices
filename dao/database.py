@@ -41,12 +41,7 @@ def getDataDateRange(begin, end):
 '''
 FUNCTION WHICH CRETES SOME RANDOM DATA AND STORES IN THE DB
 '''
-def update(newData):
-    # Create connection variable
-    conn = 'mongodb://localhost:27017'
 
-    # Pass connection to the pymongo instance.
-    client = pymongo.MongoClient(conn)
 
     # Connect to a database. Will create one if not already available.
     db = client.etlProject
