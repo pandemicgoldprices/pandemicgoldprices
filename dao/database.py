@@ -64,6 +64,10 @@ def update(newData):
     print(post_id)
 
 #run this to test an insertion of data
-update()
+dummyData = [
+               { "item": "journal", "qty": 25, "status": "A", "tags": [ "blank", "red" ] },
+               { "item": "notebook", "qty": 50, "status": "A", "tags": [ "red", "blank" ] }
+
+            ]
 #run this to get the latest entry into the DB
 getLatest()
