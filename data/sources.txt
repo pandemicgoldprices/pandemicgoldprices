@@ -1,3 +1,6 @@
 DATA SOUCRES 
 goldpricehistroy1850to2011 : http://www.nma.org/pdf/gold/his_gold_prices.pdf
 older data : https://www.measuringworth.com/datasets/gold/result.php
+pandemic deaths per month https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2374803/
+covid deaths per month : https://www.cdc.gov/nchs/nvss/vsrr/covid19/index.htm
+https://github.com/nytimes/covid-19-data/blob/master/us.csv
