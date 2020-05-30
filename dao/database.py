@@ -1,6 +1,6 @@
 import pymongo
 
-# in pycharm if there is a red line under the package mongo if you move your mouse over it then it will ask to install
+# in pycharm, if there is a red line under the package mongo and you move your mouse over it, then it will ask to install
 # click install and pycharm will do the pip for you
 
 # random number library in python
@@ -9,23 +9,22 @@ import random
 '''
 to install mongodb on OSX
 https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/
-You need to install with brew and then start the mongo server
-once you run the server type mongo in terminal to check if it's working
-you can close the terminal after starting mongo it will keep running
+You need to install with brew and then start the mongo server...
+once you run the server, type mongo in terminal to check if it's working;
+you can close the terminal after starting mongo and it will keep running
 '''
 
-'''
-FUNCTION WHICH CONNECTS TO THE MONGO DB VIA PYMONGO AND GET"S THE LATEST ENTRY
-'''
+# FUNCTION WHICH CONNECTS TO THE MONGO DB VIA PYMONGO AND GET"S THE LATEST ENTRY
+
 def getLatest():
     # Create connection variable
     conn = 'mongodb://localhost:27017'
 
-    # Pass connection to the pymongo instance.
+    # Pass connection to the pymongo instance
     client = pymongo.MongoClient(conn)
 
-    # Connect to a database. Will create one if not already available.
-    # thid creates a schema called etlProject
+    # Connect to a database; will create one if not already available
+    # This creates a schema called etlProject
 
     db = client.myDB.dowGoldHistory
 
