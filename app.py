@@ -31,6 +31,21 @@ def updateMe():
 
     return index()
 
+@app.route('/intro')
+def intro():
+    data = getLatest()
+    return render_template('intro.html', data = data)
+
+@app.route('/dashboard')
+def dashboard():
+    data = getLatest()
+    return render_template('dashboard.html', data = data)
+
+@app.route('/templatedata')
+def templatedata():
+    data = getLatest()
+    return render_template('templatedata.html', data = data)
+
 #run the app
 if __name__ == '__main__':
 #=======
