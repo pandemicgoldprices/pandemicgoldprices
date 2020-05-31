@@ -4,18 +4,100 @@
     <meta charset="UTF-8">
     <title>Asian Flu</title>
     <script src="http://d3js.org/d3.v5.min.js" charset="utf-8"></script>
+
     <script src="{{url_for('static', filename='index.js')}}"></script>
     <script src="{{url_for('static', filename='renderPlotly.js')}}"></script>
-</head>
-<body>
-    <!-- a couple of buttons that can be clicked to update plots -->
-    <button id = "myButton" type = "button" class = "btn btn-primary">Button One</button>
-    <button id = "myButtonTwo" type = "button" class = "btn btn-secondary">Button Two</button>
-    <!-- a couple of plots -->
-    <h1>Asian Flu</h1>
-    <h3>A PLOT of DATA</h3>
-    <div id="myPlot"></div>
-    <h3>A 2nd PLOT</h3>
-    <div id="myPlot2"></div>
-</body>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */
+        .navbar {
+          margin-bottom: 0;
+          border-radius: 0;
+        }
+
+        /* Add a gray background color and some padding to the footer */
+        footer {
+          background-color: #f2f2f2;
+          padding: 25px;
+        }
+
+      .carousel-inner img {
+          width: 100%; /* Set width to 100% */
+          margin: auto;
+          min-height:200px;
+      }
+
+      /* Hide the carousel text when the screen is less than 600 pixels wide */
+      @media (max-width: 600px) {
+        .carousel-caption {
+          display: none;
+        }
+      }
+      </style>
+    <body>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="introduction.html">Gold Diggers</a>
+              </div>
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="spanish_flu.html">Spanish Flu</a></li>
+                <li><a href="asian_flu.html">Asian Flu</a></li>
+                <li><a href="hong_kong_flu.html">Hong Kong Flu</a></li>
+                <li><a href="swine_flu.html">Swine Flu</a></li>
+                <li><a href="coronavirus.html">COVID-19</a></li>
+              </ul>
+            </div>
+          </nav>
+        <div class="container text-center">
+            <h3>What We Do</h3><br>
+            <div class="row">
+              <div class="col-sm-4">
+                <img src="{{url_for('static', filename='spanishflu.png')}}" class="img-responsive" style="width:100%" alt="Image">
+                <p>Current Project</p>
+              </div>
+              <div class="col-sm-4">
+                <img src="/static/Asianflu.jpg/150x80" class="img-responsive" style="width:100%" alt="Image">
+                <p>Project 2</p>
+              </div>
+              <div class="col-sm-4">
+                  <img src="/static/hongkongflu.png/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+                  <p>Project 3</p>
+              </div>
+              <div class="col-sm-4">
+                  <div class="well">
+                   <p>Some text1..</p>
+                  </div>
+                  <div class="well">
+                   <p>Some text1..</p>
+                  </div>
+               </div>
+               <div class="col-sm-4">
+                  <div class="well">
+                   <p>Some text2..</p>
+                  </div>
+                  <div class="well">
+                   <p>Some text..</p>
+                  </div>
+               </div>
+        <div class="col-sm-4">
+            <div class="well">
+            <p>Some text..</p>
+            </div>
+            <div class="well">
+            <p>Some text..</p>
+        </div>
+    </div>
+ </div>
+ <br>
+
+          <footer class="container-fluid text-center">
+            <p>Footer Text</p>
+          </footer>
+    </body>
+
 </html>
