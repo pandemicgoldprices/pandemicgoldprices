@@ -61,3 +61,7 @@ def load():
     print("results count of deaths data :" + results_count2)
         # display top record
     print(dataOut2[0])
+
+    search = db.find( { 'year': 1920 } )
+    for x in search:
+      print(x)

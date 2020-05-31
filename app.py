@@ -1,10 +1,12 @@
 
 from flask import Flask, render_template, jsonify, redirect, url_for, request
 # from scrape import scrape
-from dao.database import getLatest
+from dao.database import getLatest,  getRangeDowData
 from load_data import load
 
 load()
+newData = getRangeDowData(1918,1920)
+print(newData)
 
 # Create an instance of our Flask app.
 app = Flask(__name__, static_url_path='')
@@ -14,6 +16,7 @@ app = Flask(__name__, static_url_path='')
 @app.route('/', methods=['GET', 'POST'])
 def index():
     # call to database to get latest data
+    yearData = getRangeDowData(1918,1920)
     data = getLatest()
     return render_template('index.html', data = data )
 
