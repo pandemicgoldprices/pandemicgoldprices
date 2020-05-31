@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>pandemic gold prices</title>
+    <script src="http://d3js.org/d3.v5.min.js" charset="utf-8"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
+    <script src="{{url_for('static', filename='index.js')}}"></script>
+    <script src="renderPlotly.js"></script>
+
+
+
+</head>
+<body>
+<canvas id="line-chart" width="800" height="450"> </canvas>
+<!--  a couple of buttons that can be clicked to update plots -->
+<button id ="myButton" type="button" class="btn btn-primary" onClick="renderPlotsType1()">Button One</button>
+<canvas id="mixed-chart" width="800" height="450"></canvas>
+<button id = "myButtonTwo" type="button" class="btn btn-secondary" onClick="renderPlotsType2()">Button Two</button>
+
+<!-- a couple of plots -->
+
+<H3> A PLOT of DATA  </H3>
+<div id ="myPlot"></div>
+<H3> A 2nd PLOT </H3>
+<div id ="myPlot2"></div>
+</body>
+=======
+
+
+</html>

@@ -38,7 +38,7 @@ def template_data():
     data = getLatest()
     return render_template('template_data.html', data = data)
 
-@app.route('/spanish_flu')
+@app.route('/spanish_flu_1918')
 def spanish_flu():
     data = getLatest()
     return render_template('spanish_flu.html', data = data)
