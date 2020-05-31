@@ -1,5 +1,5 @@
 
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, redirect, url_for, request
 # from scrape import scrape
 from dao.database import getLatest
 from load_data import load
@@ -7,11 +7,11 @@ from load_data import load
 load()
 
 # Create an instance of our Flask app.
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='')
 
 # update()
 # index
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def index():
     # call to database to get latest data
     data = getLatest()
@@ -62,6 +62,7 @@ def swine_flu():
 def coronavirus():
     data = getLatest()
     return render_template('coronavirus.html', data = data)
+
 
 # run the app
 if __name__ == '__main__':
