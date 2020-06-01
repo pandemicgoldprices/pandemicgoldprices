@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>pandemic gold prices</title>
     <script src="http://d3js.org/d3.v5.min.js" charset="utf-8"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
     <script src="{{url_for('static', filename='render_test.js')}}"></script>
@@ -20,7 +21,8 @@
 <button id ="myButton" type="button" class="btn btn-primary" onClick="renderPlotsType1()">Button One</button>
 <canvas id="mixed-chart" width="800" height="450"></canvas>
 <button id = "myButtonTwo" type="button" class="btn btn-secondary" onClick="renderPlotsType2()">Button Two</button>
-<button id = "myButtonThree" type="button" class="btn btn-secondary" onClick="renderDowOverGoldPlot(data, 'myplot3')">Button Three</button>
+<!-- a button which when clicked passes the data into the renderplot and renders in id myplot3-->
+<button id = "myButtonThree" type="button" class="btn btn-secondary" onClick="renderDowOverGoldPlot('myPlot3',{{ data }})">Button Three</button>
 
 <!-- a couple of plots -->
 

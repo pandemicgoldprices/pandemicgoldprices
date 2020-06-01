@@ -71,8 +71,8 @@ new Chart(document.getElementById("mixed-chart"), {
 }
 
 /** a function which renders the dow/gold monthly change for a period of years */
-/** idString is the id placeholder in the html div  */
-function renderDowOverGoldPlot(data, idString){
+/** divID is the id placeholder in the html div  */
+function renderDowOverGoldPlot(divId, data){
 
   /*** data sample 
   [{'_id': ObjectId('5ed42e9f4d18271a686d4b89'), 'year': 1918, 'month': 'Jan', 'dow_average': '75.66', 'month_int': 1, 'gold_price':
@@ -82,17 +82,19 @@ function renderDowOverGoldPlot(data, idString){
 
  */
 
- data = 
+ 
 
-//chartData = myFunc({{data|tojson}})
+//chartData = myFunc({data})
 
-// console.log(data)
+console.log(data)
+
+
  Months = []
  Change_in_DOWoverGold = []
  
-chartData.array.forEach(e => {
-  Months.push(e.year + "/" + e.montth_int)
-  Change_inDOWoverGold.push(e.dow_div_gold_monthly_change)
+data.forEach(e => {
+  Months.push(e.year + "/" + e.month_int)
+  Change_in_DOWoverGold.push(e.dow_div_gold_monthly_change)
   
 });
 
@@ -105,6 +107,8 @@ let trace1 = {
 
 let plotData = [trace1];
 
-Plotly.newPlot(idString, plotData);
+Plotly.newPlot(divId, plotData);
+
+
 
 }
