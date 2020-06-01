@@ -36,6 +36,21 @@ def getLatest():
     # display top record
     print(dataOut[0])
 
-def getDataDateRange(begin, end):
-    data = {}
+def getRangeDowData(yearstart, yearend):
+    conn = 'mongodb://localhost:27017'
+
+    # Pass connection to the pymongo instance
+    client = pymongo.MongoClient(conn)
+
+    # Connect to a database; will create one if not already available
+    # This creates a schema called etlProject
+
+    db = client.myDB.dowGoldHistory
+    data = []
+    for i in range(yearstart, yearend + 1):
+        search = db.find( { 'year': i } )
+        for x in search:
+              data.append(x)
+    print("here")
+    #print(data)
     return data
