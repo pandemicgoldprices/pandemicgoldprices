@@ -5,8 +5,8 @@ from dao.database import getLatest,  getRangeDowData
 from load_data import load
 
 load()
-newData = getRangeDowData(1918,1920)
-print(newData)
+
+#print(newData)
 
 # Create an instance of our Flask app.
 app = Flask(__name__, static_url_path='')
@@ -65,6 +65,13 @@ def swine_flu():
 def coronavirus():
     data = getLatest()
     return render_template('coronavirus.html', data = data)
+
+
+@app.route('/render_test')
+def renderTest():
+    newData = getRangeDowData(1918,1920)
+   # print(newData)
+    return render_template('render_test.html', data = newData)
 
 
 # run the app
