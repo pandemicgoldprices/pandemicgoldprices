@@ -54,8 +54,9 @@ def template_data():
 
 @app.route('/spanish_flu_1918')
 def spanish_flu():
-    data = getLatest()
-    return render_template('spanish_flu.html', data = data)
+    spanish_flu_data = getRangeDowData(1918,1919)
+    json_spanish_flu_data = str(JSONEncoder().encode(spanish_flu_data))
+    return render_template('spanish_flu.html', data = json_spanish_flu_data)
 
 @app.route('/asian_flu')
 def asian_flu():
@@ -64,11 +65,8 @@ def asian_flu():
 
 @app.route('/hong_kong_flu')
 def hong_kong_flu():
-
     newData = getRangeDowData(1968,1973)
-
     jsonNewData3 = str(JSONEncoder().encode(newData))
-    
     return render_template('hong_kong_flu.html', data = jsonNewData3)
 
 @app.route('/swine_flu')
