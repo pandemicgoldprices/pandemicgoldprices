@@ -4,6 +4,15 @@ from flask import Flask, render_template, jsonify, redirect, url_for, request
 from dao.database import getLatest,  getRangeDowData, getMonthlyDeathsData
 from load_data import load
 
+import json
+from bson import ObjectId
+
+class JSONEncoder(json.JSONEncoder):
+    def default(self, o):
+        if isinstance(o, ObjectId):
+            return str(o)
+        return json.JSONEncoder.default(self, o)
+
 
 
 load()
@@ -55,8 +64,12 @@ def asian_flu():
 
 @app.route('/hong_kong_flu')
 def hong_kong_flu():
-    data = getLatest()
-    return render_template('hong_kong_flu.html', data = data)
+
+    newData = getRangeDowData(1968,1973)
+
+    jsonNewData3 = str(JSONEncoder().encode(newData))
+    
+    return render_template('hong_kong_flu.html', data = jsonNewData3)
 
 @app.route('/swine_flu')
 def swine_flu():
@@ -68,14 +81,7 @@ def coronavirus():
     data = getLatest()
     return render_template('coronavirus.html', data = data)
 
-import json
-from bson import ObjectId
 
-class JSONEncoder(json.JSONEncoder):
-    def default(self, o):
-        if isinstance(o, ObjectId):
-            return str(o)
-        return json.JSONEncoder.default(self, o)
 
 
 ''' test route that renders data from mongo into a plotly graph 
