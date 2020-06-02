@@ -43,8 +43,10 @@ def introduction():
 
 @app.route('/dashboard')
 def dashboard():
-    data = getLatest()
-    return render_template('dashboard.html', data = data)
+    deathData = getMonthlyDeathsData()
+    jsonDeathData = str(JSONEncoder().encode(deathData))
+
+    return render_template('dashboard.html', jsonDeathData = jsonDeathData)
 
 @app.route('/template_data')
 def template_data():

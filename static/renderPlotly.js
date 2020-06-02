@@ -70,6 +70,55 @@ new Chart(document.getElementById("mixed-chart"), {
 })
 }
 
+
+function renderMonthlyDeaths(divId, deathsData){
+
+  months = []
+  dowGold = []
+  deaths = []
+  jsonData = JSON.parse(deathsData)
+
+  jsonData.forEach(d => {
+    months.push(d.Month)
+    dowGold.push(d.dow_gold_change_next_month)
+    deaths.push(d.US_Deaths_per_100k)
+    
+  });
+
+  renderBarAndLineChart(divId, months, "Dow to Gold Ratio", dowGold, "US Deaths (per 100K)", deaths )
+}
+
+
+function renderBarAndLineChart(divId, xAxis, xLineLabel, xLineData, yBarLabel, yBarData ) {
+
+  new Chart( document.getElementById(divId), {
+    type: 'bar',
+    data: {
+      labels: xAxis,
+      datasets: [{
+          label: xLineLabel,
+          type: "line",
+          borderColor: "#8e5ea2",
+          data: xLineData,
+          fill: false
+        }, {
+          label: yBarLabel,
+          type: "bar",
+          backgroundColor: "rgba(0,0,0,0.2)",
+          data: yBarData,
+        }
+      ]
+    },
+      options: {
+        title: {
+          display: true,
+          // text: 'US Death Toll vs Market Activity'
+        },
+        legend: { display: true }
+      }
+  })
+ }
+
 /** a function which renders the dow/gold monthly change for a period of years */
 /** divID is the id placeholder in the html div  */
 function renderDowOverGoldPlot(divId, data){

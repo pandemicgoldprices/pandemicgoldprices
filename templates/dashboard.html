@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <title>Dashboard</title>
     <script src="http://d3js.org/d3.v5.min.js" charset="utf-8"></script>
-    <script src="{{url_for('static', filename='index.js')}}"></script>
-    <script src="{{url_for('static', filename='renderPlotly.js')}}"></script>
+    <!-- <script src="{{url_for('static', filename='index.js')}}"></script> -->
+    <!-- <script src="{{url_for('static', filename='renderPlotly.js')}}"></script> -->
+    <script type="text/javascript" src="/index.js"></script>
+    <script type="text/javascript" src="/renderPlotly.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -14,10 +16,19 @@
     <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
     <style>
     html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
     </style>
-    <body class="w3-theme-l5">
+
+    <script type="text/javascript">
+      function decodeHtml(html) {
+        var txt = document.createElement("textarea");
+        txt.innerHTML = html;
+        return txt.value;
+      }
+    </script>
+
 </head>
 <body>
     <!-- Navbar -->
@@ -47,12 +58,14 @@
           <!-- Profile -->
           <div class="w3-card w3-round w3-white">
             <div class="w3-container">
-             <h4 class="w3-center">Key Findings</h4>
-             <p class="w3-center"><img src=".." class="w3-circle" style="height:106px;width:106px" alt="Metrics"></p>
+             <h4 class="w3-center">Pandemics in Recent History</h4>
+             <p class="w3-center"></p>
              <hr>
-             <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i> Metrics, UI</p>
-             <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> US, UK</p>
-             <p><i class="fa fa-fw w3-margin-right w3-text-theme"></i> Spanish Flu</p>
+             <p><i class="fa fa-fw w3-margin-right w3-text-theme"></i>Spanish Flu(H1N1): <strong>1918–1920</strong></p>
+             <p><i class="fa fa-fw w3-margin-right w3-text-theme"></i>Asian Flu (H2N2): <strong>1957–1958</strong></p>
+             <p><i class="fa fa-fw w3-margin-right w3-text-theme"></i>Hong Kong Flu: <strong>1968–1969</strong></p>
+             <p><i class="fa fa-fw w3-margin-right w3-text-theme"></i>Swine Flu (H1N1): <strong>2009–2010</strong></p>
+             <p><i class="fa fa-fw w3-margin-right w3-text-theme"></i>Coronavirus (COVID-19): <strong>2019-Present</strong></p>
             </div>
           </div>
           <br>
@@ -70,27 +83,27 @@
               </div>
               <button onclick="myFunction('Demo3')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-users fa-fw w3-margin-right"></i> Loading</button>
               <div id="Demo3" class="w3-hide w3-container">
-             <div class="w3-row-padding">
+             <!--div class="w3-row-padding">
              <br>
                <div class="w3-half">
-                 <img src="..." style="width:100%" class="w3-margin-bottom">
+                 <img src="#" style="width:100%" class="w3-margin-bottom">
                </div>
                <div class="w3-half">
-                 <img src="..." style="width:100%" class="w3-margin-bottom">
+                 <img src="#" style="width:100%" class="w3-margin-bottom">
                </div>
                <div class="w3-half">
-                 <img src="..." style="width:100%" class="w3-margin-bottom">
+                 <img src="#" style="width:100%" class="w3-margin-bottom">
                </div>
                <div class="w3-half">
-                 <img src="..." style="width:100%" class="w3-margin-bottom">
+                 <img src="#" style="width:100%" class="w3-margin-bottom">
                </div>
                <div class="w3-half">
-                 <img src="..." style="width:100%" class="w3-margin-bottom">
+                 <img src="#" style="width:100%" class="w3-margin-bottom">
                </div>
                <div class="w3-half">
-                 <img src="..." style="width:100%" class="w3-margin-bottom">
+                 <img src="#" style="width:100%" class="w3-margin-bottom">
                </div>
-             </div>
+             </div-->
               </div>
             </div>
           </div>
@@ -107,13 +120,8 @@
           </div>
           <br>
 
-          <!-- Alert Box -->
-          <div class="w3-container w3-display-container w3-round w3-theme-l4 w3-border w3-theme-border w3-margin-bottom w3-hide-small">
-            <span onclick="this.parentElement.style.display='none'" class="w3-button w3-theme-l3 w3-display-topright">
-              <i class="fa fa-remove"></i>
-            </span>
-            <p><strong>Hey!</strong></p>
-            <p>People are looking at your profile. Find out who.</p>
+          <div class="w3-card w3-round w3-white w3-center">
+            <img src="/gold_and_dow.jpg" alt="image" style="width:100%"><br>
           </div>
 
         <!-- End Left Column -->
@@ -133,36 +141,48 @@
           </div>
 
           <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
-            <img src="..." alt="Metrics" class="w3-left w3-circle w3-margin-right" style="width:60px">
+            <!-- <img src="#" alt="Metrics" class="w3-left w3-circle w3-margin-right" style="width:60px"> -->
             <span class="w3-right w3-opacity">1 min</span>
-            <h4>Charts</h4><br>
+            <h4><strong>Death Toll vs Market Activity</strong></h4><br>
             <hr class="w3-clear">
+            <div>
+              <div id="monthlyDeaths" value="monthlyDeaths">
+                <canvas id="deathChart" width="600" height="600"></canvas>
+                <script>
+                  renderMonthlyDeaths("deathChart", decodeHtml( '{{ jsonDeathData }}' ) ) 
+                </script>
+              </div>
+            </div>
+
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
               <div class="w3-row-padding" style="margin:0 -16px">
                 <div class="w3-half">
-                  <img src="..." style="width:100%" alt="bar charts" class="w3-margin-bottom">
+                  <img src="#" style="width:100%" alt="bar charts" class="w3-margin-bottom">
                 </div>
                 <div class="w3-half">
-                  <img src="..." style="width:100%" alt="charts" class="w3-margin-bottom">
+                  <img src="#" style="width:100%" alt="charts" class="w3-margin-bottom">
               </div>
             </div>
           </div>
 
           <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
-            <img src="..." alt="Metrics" class="w3-left w3-circle w3-margin-right" style="width:60px">
+            <!-- <img src="#" alt="Metrics" class="w3-left w3-circle w3-margin-right" style="width:60px"> -->
             <span class="w3-right w3-opacity">16 min</span>
             <h4>Chart One</h4><br>
             <hr class="w3-clear">
+            <div>
+              <img src="/deathsvsdelta.png" alt="image" style="width:100%">
+            </div>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
           </div>
 
           <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
-            <img src="..." alt="Bars" class="w3-left w3-circle w3-margin-right" style="width:60px">
+            <img src="#" alt="Bars" class="w3-left w3-circle w3-margin-right" style="width:60px">
             <span class="w3-right w3-opacity">32 min</span>
             <h4>Chart Two</h4><br>
             <hr class="w3-clear">
             <p>Have you seen this?</p>
-            <img src="..." style="width:100%" class="w3-margin-bottom">
+            <img src="#" style="width:100%" class="w3-margin-bottom">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
           </div>
 
@@ -174,7 +194,7 @@
           <div class="w3-card w3-round w3-white w3-center">
             <div class="w3-container">
               <p>Upcoming Research:</p>
-              <img src="..." alt="Forest" style="width:100%;">
+              <img src="#" alt="Forest" style="width:100%;">
               <p><strong>Holiday</strong></p>
               <p>Friday 15:00</p>
               <p><button class="w3-button w3-block w3-theme-l4">Info</button></p>
@@ -185,7 +205,7 @@
           <div class="w3-card w3-round w3-white w3-center">
             <div class="w3-container">
               <p>Stats</p>
-              <img src="..." alt="image" style="width:50%"><br>
+              <img src="#" alt="image" style="width:50%"><br>
               <span>Metrics</span>
               <div class="w3-row w3-opacity">
                 <div class="w3-half">
@@ -199,15 +219,11 @@
           </div>
           <br>
 
-          <div class="w3-card w3-round w3-white w3-padding-16 w3-center">
-            <p>Stats</p>
+          <div class="w3-card w3-round w3-white w3-center">
+            <img src="/pandemic.jfif" alt="image" style="width:100%">
           </div>
           <br>
-
-          <div class="w3-card w3-round w3-white w3-padding-32 w3-center">
-            <p><i class="fa fa-bug w3-xxlarge"></i></p>
-          </div>
-
+          
         <!-- End Right Column -->
         </div>
 
@@ -251,6 +267,7 @@
       }
     }
     </script>
+
 </body>
 
 </html>
