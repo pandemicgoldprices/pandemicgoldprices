@@ -54,3 +54,18 @@ def getRangeDowData(yearstart, yearend):
     print("here")
     #print(data)
     return data
+
+
+def getMonthlyDeathsData():
+    print("hello")
+    data = []
+    conn = 'mongodb://localhost:27017'
+    client = pymongo.MongoClient(conn)
+    db = client.myDB.monthlydeaths
+    search = db.find()
+    for record in search:
+        data.append(record)
+    print(data)
+    return data
+
+getMonthlyDeathsData()
