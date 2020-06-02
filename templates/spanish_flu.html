@@ -2,15 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Introduction</title>
+    <title>Spanish Flu</title>
     <script src="http://d3js.org/d3.v5.min.js" charset="utf-8"></script>
-
     <script src="{{url_for('static', filename='index.js')}}"></script>
     <script src="{{url_for('static', filename='renderPlotly.js')}}"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
     <style>
     /* Remove the navbar's default margin-bottom and rounded borders */
         .navbar {
@@ -36,68 +37,47 @@
           display: none;
         }
       }
-      </style>
+    </style>
     <body>
         <nav class="navbar navbar-default">
-            <div class="container-fluid">
-              <div class="navbar-header">
-                <a class="navbar-brand" href="introduction.html">Gold Diggers</a>
-              </div>
-              <ul class="nav navbar-nav">
-                <li class="active"><a href="dashboard.html">Dashboard</a></li>
-                <li><a href="spanish_flu.html">Spanish Flu</a></li>
-                <li><a href="asian_flu.html">Asian Flu</a></li>
-                <li><a href="hong_kong_flu.html">Hong Kong Flu</a></li>
-                <li><a href="swine_flu.html">Swine Flu</a></li>
-                <li><a href="coronavirus.html">COVID-19</a></li>
-              </ul>
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="index.html">Gold Diggers</a>
             </div>
-          </nav>
-        <div class="container text-center">
-            <h3>What We Do</h3><br>
-            <div class="row">
-              <div class="col-sm-4">
-                <img src="{{url_for('static', filename='spanishflu.png')}}" class="img-responsive" style="width:100%" alt="Image">
-                <p>Current Project</p>
-              </div>
-              <div class="col-sm-4">
-                <img src="/static/Asianflu.jpg/150x80" class="img-responsive" style="width:100%" alt="Image">
-                <p>Project 2</p>
-              </div>
-              <div class="col-sm-4">
-                  <img src="/static/hongkongflu.png/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-                  <p>Project 3</p>
-              </div>
-              <div class="col-sm-4">
-                  <div class="well">
-                   <p>Some text1..</p>
-                  </div>
-                  <div class="well">
-                   <p>Some text1..</p>
-                  </div>
-               </div>
-               <div class="col-sm-4">
-                  <div class="well">
-                   <p>Some text2..</p>
-                  </div>
-                  <div class="well">
-                   <p>Some text..</p>
-                  </div>
-               </div>
-        <div class="col-sm-4">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="dashboard.html">Dashboard</a></li>
+              <li><a href="spanish_flu.html">Spanish Flu</a></li>
+              <li><a href="asian_flu.html">Asian Flu</a></li>
+              <li><a href="hong_kong_flu.html">Hong Kong Flu</a></li>
+              <li><a href="swine_flu.html">Swine Flu</a></li>
+              <li><a href="coronavirus.html">COVID-19</a></li>
+            </ul>
+          </div>
+        </nav>
+      <div class="container text-center">
+          <h3>DJIA vs. Gold Prices During the 1918 Pandemic (H1N1 Virus)</h3>
+          <br></br>
+          <!--  a couple of buttons that can be clicked to update plots -->
+          <!-- <button id ="myButton" type="button" class="btn btn-primary" onClick="renderPlotsType1()">Plot</button> -->
+          <button id = "myButtonThree" type="button" class="btn btn-secondary" onClick="renderDowOverGoldPlot('myPlot',{{ data }})">Button Three</button>
+          <!-- <canvas id="mixed-chart" width="800" height="450"></canvas> -->
+          <div id ="myPlot"></div>
+          <div class="row">
+            <div class="col-sm-12">
+              <img src="{{url_for('static', filename='spanishflu.png')}}" class="img-responsive" style="width:100%" alt="The Spanish Flu">
+              <p>Some text 1...</p>
+          </div>
+        <div class="col-sm-12">
             <div class="well">
-            <p>Some text..</p>
+            <p>Some text 2...</p>
             </div>
             <div class="well">
-            <p>Some text..</p>
+            <p>Some text 3...</p>
         </div>
-    </div>
- </div>
- <br>
-
-          <footer class="container-fluid text-center">
-            <p>Footer Text</p>
-          </footer>
-    </body>
-
+      </div>
+      <br>
+        <footer class="container-fluid text-center">
+          <p>Footer Text</p>
+        </footer>
+  </body>
 </html>
