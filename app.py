@@ -1,7 +1,7 @@
 
 from flask import Flask, render_template, jsonify, redirect, url_for, request
 # from scrape import scrape
-from dao.database import getLatest,  getRangeDowData
+from dao.database import getLatest,  getRangeDowData, getMonthlyDeathsData
 from load_data import load
 
 
@@ -89,9 +89,11 @@ def renderTest():
     jsonNewData2 = str(JSONEncoder().encode(newData))
     #print(jsonNewData2)
 
+    deathData = getMonthlyDeathsData()
+    jsonNewData3 = str(JSONEncoder().encode(deathData))
 
-
-    return render_template('render_test.html', data = jsonNewData2)
+    return render_template('render_test.html', data = jsonNewData2, deathData = jsonNewData3)
+    
 
 
 # run the app

@@ -112,3 +112,46 @@ Plotly.newPlot(divId, plotData);
 
 
 }
+
+/** a function to render monthly deaths in some pandemics 
+ * arguments are the id of the div and the data passed in 
+ */
+
+function renderDeathsMonthly(divId, data){
+
+
+ /**
+  * {'_id': ObjectId('5ed5be86f621c1b0029d96b3'), 'Month': '2020/4', 'US_Deaths_per_100k': 21.6, 'dow_gold_change_next_month': 0.37}
+  */
+
+//chartData = myFunc({data})
+
+console.log(data)
+
+
+ Months = []
+ Deaths = []
+ 
+data.forEach(e => {
+  Months.push(e.Month)
+  Deaths.push(e.US_Deaths_per_100k)
+  
+});
+
+let trace2 = {
+  x: Months,
+  y: Deaths,
+  mode: 'lines+markers',
+  type: 'scatter'
+};
+
+let plotData2 = [trace2];
+
+Plotly.newPlot(divId, plotData2);
+
+
+
+}
+
+
+
