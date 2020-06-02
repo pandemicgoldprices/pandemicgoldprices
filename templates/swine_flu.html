@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Swine Flu</title>
     <script src="http://d3js.org/d3.v5.min.js" charset="utf-8"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
     <script src="{{url_for('static', filename='index.js')}}"></script>
     <script src="{{url_for('static', filename='renderPlotly.js')}}"></script>
@@ -69,8 +70,8 @@
                   <p>Project 3</p>
               </div>
               <div class="col-sm-4">
-                  <div class="well">
-                   <p>Some text1..</p>
+
+                   <p>chart</p>
                   </div>
                   <div class="well">
                    <p>Some text1..</p>
@@ -94,6 +95,10 @@
     </div>
  </div>
  <br>
+ <div>
+ <button id = "myButtonFour" type="button" class="btn btn-secondary" onClick="renderDowOverGoldPlot('swineDowGold',{{ data }})">Button Four</button>
+</div>
+ <div id ="swineDowGold">
 
           <footer class="container-fluid text-center">
             <p>Footer Text</p>

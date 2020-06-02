@@ -73,8 +73,12 @@ def hong_kong_flu():
 
 @app.route('/swine_flu')
 def swine_flu():
-    data = getLatest()
-    return render_template('swine_flu.html', data = data)
+    newData = getRangeDowData(2009,2015)
+
+    jsonNewData4 = str(JSONEncoder().encode(newData))
+    #print("swine flue data ")
+    print(jsonNewData4)
+    return render_template('swine_flu.html', data = jsonNewData4)
 
 @app.route('/coronavirus')
 def coronavirus():

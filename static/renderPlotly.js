@@ -85,7 +85,7 @@ function renderDowOverGoldPlot(divId, data){
  
 
 //chartData = myFunc({data})
-
+console.log("data in plot function")
 console.log(data)
 
 
