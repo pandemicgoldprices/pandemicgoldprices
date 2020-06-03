@@ -14,16 +14,16 @@
 
     <style>
     /* Remove the navbar's default margin-bottom and rounded borders */
-        .navbar {
-          margin-bottom: 0;
-          border-radius: 0;
-        }
+      .navbar {
+        margin-bottom: 0;
+        border-radius: 0;
+      }
 
-        /* Add a gray background color and some padding to the footer */
-        footer {
-          background-color: #f2f2f2;
-          padding: 25px;
-        }
+      /* Add a gray background color and some padding to the footer */
+      footer {
+        background-color: #f2f2f2;
+        padding: 25px;
+      }
 
       .carousel-inner img {
           width: 100%; /* Set width to 100% */
@@ -37,6 +37,20 @@
           display: none;
         }
       }
+
+      /* I want it painted... gold. */
+      .all-gold {
+        color: white;
+        background-color: gold;
+        border-color: gold;
+        outline-color: gold;
+        text-decoration-color: gold;
+      }
+
+      #underline {
+        text-decoration: underline;
+      }
+
     </style>
     <body>
         <nav class="navbar navbar-default">
@@ -55,29 +69,27 @@
           </div>
         </nav>
       <div class="container text-center">
-          <h3>DJIA vs. Gold Prices During the 1918 Pandemic (H1N1 Virus)</h3>
+          <h2 id="underline">DJIA vs. Gold Prices During the 1918 Pandemic (H1N1 Virus)</h2>
           <br></br>
           <!--  a couple of buttons that can be clicked to update plots -->
-          <!-- <button id ="myButton" type="button" class="btn btn-primary" onClick="renderPlotsType1()">Plot</button> -->
-          <button id = "myButtonThree" type="button" class="btn btn-secondary" onClick="renderDowOverGoldPlot('myPlot',{{ data }})">Button Three</button>
-          <!-- <canvas id="mixed-chart" width="800" height="450"></canvas> -->
+          <button type="button" class="btn btn-secondary all-gold" onClick="renderDowOverGoldPlot('myPlot',{{data}})">Plot</button>
           <div id ="myPlot"></div>
+          <br></br>
           <div class="row">
             <div class="col-sm-12">
-              <img src="{{url_for('static', filename='spanishflu.png')}}" class="img-responsive" style="width:100%" alt="The Spanish Flu">
-              <p>Some text 1...</p>
+              <img src="https://cdn.vox-cdn.com/thumbor/UihREnbdwmZcKWmW8qjdxyNpU38=/0x0:2787x1858/2820x1586/filters:focal(1343x688:1787x1132):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/66470477/GettyImages_1174299512.0.jpg" class="img-responsive" style="width:100%" alt="The Spanish Flu - Image">
           </div>
+        </div>
+        <br></br>
         <div class="col-sm-12">
-            <div class="well">
-            <p>Some text 2...</p>
+            <div>
+            <p>Some text 1...</p>
             </div>
-            <div class="well">
-            <p>Some text 3...</p>
         </div>
       </div>
       <br>
         <footer class="container-fluid text-center">
-          <p>Footer Text</p>
+          <footer>Image Source: https://cdn.vox-cdn.com/thumbor/UihREnbdwmZcKWmW8qjdxyNpU38=/0x0:2787x1858/2820x1586/filters:focal(1343x688:1787x1132):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/66470477/GettyImages_1174299512.0.jpg</footer>
         </footer>
   </body>
 </html>

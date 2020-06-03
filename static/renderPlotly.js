@@ -114,7 +114,13 @@ let trace1 = {
   x: Months,
   y: Change_in_DOWoverGold,
   mode: 'lines+markers',
-  type: 'scatter'
+  type: 'scatter',
+  marker: {
+    color: 'rgb(255, 215, 0)'
+  },
+  line: {
+    color: 'rgb(255, 215, 0)'
+  }
 };
 
 let plotData = [trace1];

@@ -56,8 +56,6 @@ def template_data():
 def spanish_flu():
     spanish_flu_data = getRangeDowData(1917,1922)
     json_spanish_flu_data = str(JSONEncoder().encode(spanish_flu_data))
-    print("Spanish Flu")
-    print(json_spanish_flu_data)
     return render_template('spanish_flu.html', data = json_spanish_flu_data)
 
 @app.route('/asian_flu')
