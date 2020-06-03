@@ -1,4 +1,12 @@
 
+function apiData(data){
+  console.log(data)
+
+}
+
+
+
+
 function myFunc(vars) {
   return vars
 }
@@ -25,6 +33,8 @@ function renderPlotsType1() {
     }
 })
 }   
+
+
 
 
 
@@ -69,7 +79,6 @@ new Chart(document.getElementById("mixed-chart"), {
     }
 })
 }
-
 
 function renderMonthlyDeaths(divId, deathsData){
 
@@ -119,6 +128,7 @@ function renderBarAndLineChart(divId, xAxis, xLineLabel, xLineData, yBarLabel, y
   })
  }
 
+
 /** a function which renders the dow/gold monthly change for a period of years */
 /** divID is the id placeholder in the html div  */
 function renderDowOverGoldPlot(divId, data){
@@ -151,7 +161,13 @@ let trace1 = {
   x: Months,
   y: Change_in_DOWoverGold,
   mode: 'lines+markers',
-  type: 'scatter'
+  type: 'scatter',
+  marker: {
+    color: 'rgb(255, 215, 0)'
+  },
+  line: {
+    color: 'rgb(255, 215, 0)'
+  }
 };
 
 let plotData = [trace1];
