@@ -1,4 +1,12 @@
 
+function apiData(data){
+  console.log(data)
+
+}
+
+
+
+
 function myFunc(vars) {
   return vars
 }
@@ -25,6 +33,8 @@ function renderPlotsType1() {
     }
 })
 }   
+
+
 
 
 
@@ -69,6 +79,8 @@ new Chart(document.getElementById("mixed-chart"), {
     }
 })
 }
+
+
 
 /** a function which renders the dow/gold monthly change for a period of years */
 /** divID is the id placeholder in the html div  */

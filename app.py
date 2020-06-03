@@ -3,6 +3,7 @@ from flask import Flask, render_template, jsonify, redirect, url_for, request
 # from scrape import scrape
 from dao.database import getLatest, getRangeDowData, getMonthlyDeathsData
 from load_data import load
+from fredapi import Fred
 
 import json
 from bson import ObjectId
@@ -81,8 +82,31 @@ def swine_flu():
 
 @app.route('/coronavirus')
 def coronavirus():
-    data = getLatest()
-    return render_template('coronavirus.html', data = data)
+
+    my_key = "5d898dd8f945e9190745a8e4f666f64c"
+    fred = Fred(api_key=my_key)
+    import pandas as pd
+    goldData = fred.get_series_latest_release('GOLDAMGBD228NLBM')
+    dowData = fred.get_series_latest_release('DJIA')
+    result = pd.concat([goldData, dowData], axis=1, sort=False)
+    dgdata = result.apply (pd.to_numeric, errors='coerce')
+    df = dgdata.dropna(how='any',axis=0) 
+    df['dowoverGold'] = df[1] / df[0]
+    resultdata = df.tail(90)
+    resultdata = resultdata.round(2)
+    resultdata.drop(resultdata.columns[0], axis=1, inplace=True)
+    resultdata.drop(resultdata.columns[0], axis=1, inplace=True)
+    #resultdata.index.name = 'date'
+    resultdata['date'] = resultdata.index
+    resultdata['date'] = resultdata['date'].astype(str)
+    
+    rdata = resultdata.to_json(orient='records')
+    #resultresultdata.itterrows()
+    
+    print(rdata)
+
+
+    return render_template('coronavirus.html', data = rdata)
 
 
 ''' test route that renders data from mongo into a plotly graph...
