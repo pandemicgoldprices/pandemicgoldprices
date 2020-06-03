@@ -80,7 +80,7 @@ function renderMonthlyDeaths(divId, deathsData){
 
   jsonData.forEach(d => {
     months.push(d.Month)
-    dowGold.push(d.dow_gold_change_next_month)
+    dowGold.push(d.dow_gold_change_next_month * 10)
     deaths.push(d.US_Deaths_per_100k)
     
   });
@@ -100,7 +100,7 @@ function renderBarAndLineChart(divId, xAxis, xLineLabel, xLineData, yBarLabel, y
           type: "line",
           borderColor: "#8e5ea2",
           data: xLineData,
-          fill: false
+          fill: true
         }, {
           label: yBarLabel,
           type: "bar",
