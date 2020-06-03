@@ -51,7 +51,7 @@ def template_data():
     data = getLatest()
     return render_template('template_data.html', data = data)
 
-@app.route('/spanish_flu_1918')
+@app.route('/spanish_flu')
 def spanish_flu():
     spanish_flu_data = getRangeDowData(1917,1922)
     json_spanish_flu_data = str(JSONEncoder().encode(spanish_flu_data))
