@@ -1,8 +1,43 @@
 
-function apiData(data){
+function apiData(divId, data){
   console.log(data)
 
+  
+ Months = []
+ Change_in_DOWoverGold = []
+ 
+data.forEach(e => {
+  Months.push(e.date)
+  Change_in_DOWoverGold.push(e.dowoverGold)
+  
+});
+
+let trace5 = {
+  x: Months,
+  y: Change_in_DOWoverGold,
+  mode: 'lines+markers',
+  type: 'scatter',
+  marker: {
+    color: 'rgb(255, 215, 0)'
+  },
+  line: {
+    color: 'rgb(255, 215, 0)'
+  }
+};
+
+let plotData = [trace5];
+var layout = {
+yaxis: {
+  title: 'DOW/GOLD RATIO' }
+};
+
+Plotly.newPlot(divId, plotData, layout);
+
+
+
 }
+
+
 
 
 

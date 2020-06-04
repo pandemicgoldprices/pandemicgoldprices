@@ -4,6 +4,7 @@ git <!DOCTYPE html>
     <meta charset="UTF-8">
     <title>COVID-19</title>
     <script src="http://d3js.org/d3.v5.min.js" charset="utf-8"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
     <script src="{{url_for('static', filename='index.js')}}"></script>
     <script src="{{url_for('static', filename='renderPlotly.js')}}"></script>
@@ -95,8 +96,11 @@ git <!DOCTYPE html>
  </div>
  <br>
  <div>
-  <button id = "myButton" type="button" class="btn btn-secondary" onClick="apiData({{ data }})">Button Four</button>
+  <button id = "myButton" type="button" class="btn btn-secondary" onClick="apiData('myPlot', {{ data }})">Click to Show Latest Data</button>
  </div>
+
+ <H3> RECENT CHANGES IN RATIO OF DOW/GOLD FROM ST LOUIS FED API </H3>
+<div id ="myPlot"></div>
 
           <footer class="container-fluid text-center">
             <p>Footer Text</p>
