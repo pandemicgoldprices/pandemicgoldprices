@@ -67,9 +67,10 @@ def asian_flu():
 
 @app.route('/hong_kong_flu')
 def hong_kong_flu():
-    newData = getRangeDowData(1968,1973)
-    jsonNewData3 = str(JSONEncoder().encode(newData))
-    return render_template('hong_kong_flu.html', data = jsonNewData3)
+    hong_kong_data = getRangeDowData(1968,1973)
+    json_hong_kong_data = str(JSONEncoder().encode(hong_kong_data))
+    return render_template('hong_kong_flu.html', data1 = json_hong_kong_data)
+
 
 @app.route('/swine_flu')
 def swine_flu():
