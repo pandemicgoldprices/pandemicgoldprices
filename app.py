@@ -1,4 +1,3 @@
-
 from flask import Flask, render_template, jsonify, redirect, url_for, request
 # from scrape import scrape
 from dao.database import getLatest, getRangeDowData, getMonthlyDeathsData
@@ -67,9 +66,12 @@ def asian_flu():
 
 @app.route('/hong_kong_flu')
 def hong_kong_flu():
-    newData = getRangeDowData(1968,1973)
-    jsonNewData3 = str(JSONEncoder().encode(newData))
-    return render_template('hong_kong_flu.html', data = jsonNewData3)
+    hong_kong_data = getRangeDowData(1968,1973)
+    hong_kong_data1=getMonthlyDeathsData()
+    json_hong_kong_data1 = str(JSONEncoder().encode(hong_kong_data1))
+    json_hong_kong_data = str(JSONEncoder().encode(hong_kong_data))
+    return render_template('hong_kong_flu.html', data1 = json_hong_kong_data,data2=json_hong_kong_data1)
+
 
 @app.route('/swine_flu')
 def swine_flu():
@@ -125,3 +127,5 @@ def renderTest():
 # run the app
 if __name__ == '__main__':
     app.run(debug=True)
+
+
