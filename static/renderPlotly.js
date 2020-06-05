@@ -1,4 +1,60 @@
 
+function renderDowOverGoldPlot2(divId, data){
+
+  /*** data sample 
+  [{'_id': ObjectId('5ed42e9f4d18271a686d4b89'), 'year': 1918, 'month': 'Jan', 'dow_average': '75.66', 'month_int': 1, 'gold_price':
+  19.84, 'DOW_div_gold': 3.81374808, 'dow_div_gold_monthly_change': 0.28}, {'_id': ObjectId('5ed42e9f4d18271a686d4b8a'), 'year': 19
+ 18, 'month': 'Feb', 'dow_average': '79.83', 'month_int': 2, 'gold_price': 19.84, 'DOW_div_gold': 4.0235635080000005, 'dow_div_gold
+ _monthly_change': 0.21},
+
+ */
+
+ 
+
+//chartData = myFunc({data})
+console.log("data in plot function")
+console.log(data)
+
+
+ Months = []
+ Change_in_DOWoverGold = []
+ 
+data.forEach(e => {
+  Months.push(e.year + "/" + e.month_int)
+  Change_in_DOWoverGold.push(e.dow_div_gold_monthly_change)
+  
+});
+
+let trace1 = {
+  x: Months,
+  y: Change_in_DOWoverGold,
+  mode: 'lines+markers',
+  type: 'scatter',
+  marker: {
+    color: 'rgb(255, 215, 0)'
+  },
+  line: {
+    color: 'rgb(255, 215, 0)'
+  }
+};
+
+let plotData = [trace1];
+
+var layout = {
+  yaxis: {
+    title: 'DOW/GOLD RATIO' }
+  };
+
+Plotly.newPlot(divId, plotData, layout);
+
+
+}
+
+
+
+
+
+
 function apiData(divId, data){
   console.log(data)
 
@@ -34,12 +90,36 @@ yaxis: {
 Plotly.newPlot(divId, plotData, layout);
 
 
-
 }
 
+function GoldPlotOgi(divId, data){
 
 
+var OgiMonths = []
+var OgiChange_in_DOWoverGold = []
+ 
+data.forEach(e => {
+  OgiMonths.push(e.year + "/" + e.month_int)
+  OgiChange_in_DOWoverGold.push(e.dow_div_gold_monthly_change)
+});
 
+let Ogitrace1 = {
+  x: OgiMonths,
+  y: OgiChange_in_DOWoverGold,
+  mode: 'lines+markers',
+  type: 'scatter',
+  marker: {
+    color: 'rgb(255, 215, 0)'
+  },
+  line: {
+    color: 'rgb(255, 215, 0)'
+  }
+};
+
+let OgiplotData = [Ogitrace1];
+Plotly.newPlot(divId, OgiplotData);
+
+}
 
 
 function myFunc(vars) {
