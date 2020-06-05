@@ -1,95 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Spanish Flu</title>
-    <script src="http://d3js.org/d3.v5.min.js" charset="utf-8"></script>
-    <script src="{{url_for('static', filename='index.js')}}"></script>
-    <script src="{{url_for('static', filename='renderPlotly.js')}}"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spanish Flu</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="http://d3js.org/d3.v5.min.js" charset="utf-8"></script>
+  <script src="{{url_for('static', filename='index.js')}}"></script>
+  <script src="{{url_for('static', filename='renderPlotly.js')}}"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
-    <style>
-    /* Remove the navbar's default margin-bottom and rounded borders */
-      .navbar {
-        margin-bottom: 0;
-        border-radius: 0;
+  <style>
+  /* Remove the navbar's default margin-bottom and rounded borders */
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+
+    .carousel-inner img {
+        width: 100%; /* Set width to 100% */
+        margin: auto;
+        min-height:200px;
+    }
+
+    /* Hide the carousel text when the screen is less than 600 pixels wide */
+    @media (max-width: 600px) {
+      .carousel-caption {
+        display: none;
       }
+    }
 
-      /* Add a gray background color and some padding to the footer */
-      footer {
-        background-color: #f2f2f2;
-        padding: 25px;
-      }
+    /* I want it painted... gold. */
+    .all-gold {
+      color: white;
+      background-color: gold;
+      border-color: gold;
+      outline-color: gold;
+      text-decoration-color: gold;
+    }
 
-      .carousel-inner img {
-          width: 100%; /* Set width to 100% */
-          margin: auto;
-          min-height:200px;
-      }
-
-      /* Hide the carousel text when the screen is less than 600 pixels wide */
-      @media (max-width: 600px) {
-        .carousel-caption {
-          display: none;
-        }
-      }
-
-      /* I want it painted... gold. */
-      .all-gold {
-        color: white;
-        background-color: gold;
-        border-color: gold;
-        outline-color: gold;
-        text-decoration-color: gold;
-      }
-
-      #underline {
-        text-decoration: underline;
-      }
-
-    </style>
-    <body>
-        <nav class="navbar navbar-default">
-          <div class="container-fluid">
-            <div class="navbar-header">
-              <a class="navbar-brand" href="index">Gold Diggers</a>
-            </div>
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="dashboard">Dashboard</a></li>
-              <li><a href="spanish_flu">Spanish Flu</a></li>
-              <li><a href="asian_flu">Asian Flu</a></li>
-              <li><a href="hong_kong_flu">Hong Kong Flu</a></li>
-              <li><a href="swine_flu">Swine Flu</a></li>
-              <li><a href="coronavirus">COVID-19</a></li>
-            </ul>
+    #underline {
+      text-decoration: underline;
+    }
+  </style>
+  
+  <body>
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="index">Gold Diggers</a>
           </div>
-        </nav>
-      <div class="container text-center">
-          <h2 id="underline">DJIA vs. Gold Prices During the 1918 Pandemic (H1N1 Virus)</h2>
-          <br></br>
-          <!--  a couple of buttons that can be clicked to update plots -->
-          <button type="button" class="btn btn-secondary all-gold" onClick="renderDowOverGoldPlot2('myPlot', {{data}} )">Plot DOW/GOLD</button>
-          <div id ="myPlot"></div>
-          <br></br>
-          <div class="row">
-            <div class="col-sm-12">
-              <img src="https://cdn.vox-cdn.com/thumbor/UihREnbdwmZcKWmW8qjdxyNpU38=/0x0:2787x1858/2820x1586/filters:focal(1343x688:1787x1132):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/66470477/GettyImages_1174299512.0.jpg" class="img-responsive" style="width:100%" alt="The Spanish Flu - Image">
-          </div>
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="dashboard">Dashboard</a></li>
+            <li><a href="spanish_flu">Spanish Flu</a></li>
+            <li><a href="asian_flu">Asian Flu</a></li>
+            <li><a href="hong_kong_flu">Hong Kong Flu</a></li>
+            <li><a href="swine_flu">Swine Flu</a></li>
+            <li><a href="coronavirus">COVID-19</a></li>
+          </ul>
         </div>
+      </nav>
+    <div class="container text-center">
+        <h2 id="underline">DJIA Prices/Gold Prices Ratio During the 1918 Pandemic (H1N1 Virus)</h2>
         <br></br>
-        <div class="col-sm-12">
-            <div>
-            <p>Some text 1...</p>
-            </div>
+        <button type="button" class="btn btn-secondary all-gold" onClick="renderDowOverGoldPlot('plot', {{data}})">DJIA/Gold Button</button>
+        <div id ="plot"></div>
+        <br></br>
+        <div class="row">
+          <div class="col-sm-12">
+            <img src="https://cdn.vox-cdn.com/thumbor/UihREnbdwmZcKWmW8qjdxyNpU38=/0x0:2787x1858/2820x1586/filters:focal(1343x688:1787x1132):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/66470477/GettyImages_1174299512.0.jpg" class="img-responsive" style="width:100%" alt="The Spanish Flu - Image">
         </div>
       </div>
-      <br>
-        <footer class="container-fluid text-center">
-          <footer>Image Source: https://cdn.vox-cdn.com/thumbor/UihREnbdwmZcKWmW8qjdxyNpU38=/0x0:2787x1858/2820x1586/filters:focal(1343x688:1787x1132):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/66470477/GettyImages_1174299512.0.jpg</footer>
-        </footer>
+      <br></br>
+      <div class="col-sm-12">
+          <div>
+          <p>We looked at this in a 5-year period: from 1917 to 1922. We wanted to capture the before, during, and after-effects of the so-called "Spanish Flu", which was most prevalent during 1918-19. If you look at the chart above, you can see that it is volatile-looking, much like a stock, for instance. The fact is that there were many confounding variables that had an impact on both sets of prices. For example, during this time, WWI was waged, climaxed, and ended. The Russian Revolution was ongoing. The list goes on. But, reverting back to what we set out to find, which was whether gold is a hedge during pandemics such as this one, we just cannot say with certainty (with so much gray area) that people were running to buy gold over stocks at the height of the pandemic, and whether it is solely because of this that they bought gold.</p>
+          </div>
+      </div>
+    </div>
+    <br>
+    <footer class="container-fluid text-center">
+      <footer>Image Source: https://cdn.vox-cdn.com/thumbor/UihREnbdwmZcKWmW8qjdxyNpU38=/0x0:2787x1858/2820x1586/filters:focal(1343x688:1787x1132):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/66470477/GettyImages_1174299512.0.jpg</footer>
+    </footer>
   </body>
 </html>
