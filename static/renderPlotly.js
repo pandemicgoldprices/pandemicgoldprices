@@ -35,7 +35,10 @@ function renderDowOverGoldPlot(myDiv, data) {
 
   var layout = {
     xaxis: {
-      title: 'Months'}
+      title: 'Months'},
+      yaxis: {
+        title: "DOW/GOLD ratio"
+      }
   };
 
   Plotly.newPlot(myDiv, plotData, layout);
