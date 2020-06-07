@@ -46,7 +46,6 @@ def dashboard():
     deathData = getMonthlyDeathsData()
     del deathData[-1]
     jsonDeathData = str(JSONEncoder().encode(deathData))
-
     return render_template('dashboard.html', jsonDeathData = jsonDeathData)
 
 @app.route('/template_data')
@@ -77,7 +76,6 @@ def hong_kong_flu():
 @app.route('/swine_flu')
 def swine_flu():
     newData = getRangeDowData(2009,2015)
-
     jsonNewData4 = str(JSONEncoder().encode(newData))
     #print("swine flue data ")
     print(jsonNewData4)
@@ -86,7 +84,6 @@ def swine_flu():
 @app.route('/combined_data')
 def combined_data():
     newData = getRangeDowData(1957,1960)
-
     jsonNewData5 = str(JSONEncoder().encode(newData))
     #print("swine flue data ")
     #print(jsonNewData4)
@@ -94,7 +91,6 @@ def combined_data():
 
 @app.route('/coronavirus')
 def coronavirus():
-
     my_key = "5d898dd8f945e9190745a8e4f666f64c"
     fred = Fred(api_key=my_key)
     import pandas as pd
@@ -111,31 +107,11 @@ def coronavirus():
     #resultdata.index.name = 'date'
     resultdata['date'] = resultdata.index
     resultdata['date'] = resultdata['date'].astype(str)
-    
     rdata = resultdata.to_json(orient='records')
     #resultresultdata.itterrows()
-    
     print(rdata)
-
-
     return render_template('coronavirus.html', data = rdata)
-
-
-''' test route that renders data from mongo into a plotly graph...
-you can select the years for your pandemic in getRangeDowData
-'''
-
-@app.route('/render_test')
-def renderTest():
-    newData = getRangeDowData(1918,1920)
-    jsonNewData2 = str(JSONEncoder().encode(newData))
-    #print(jsonNewData2)
-    deathData = getMonthlyDeathsData()
-    jsonNewData3 = str(JSONEncoder().encode(deathData))
-    return render_template('render_test.html', data = jsonNewData2, deathData = jsonNewData3)
 
 # run the app
 if __name__ == '__main__':
     app.run(debug=True)
-
-
