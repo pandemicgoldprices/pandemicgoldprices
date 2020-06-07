@@ -44,6 +44,7 @@ def introduction():
 @app.route('/dashboard')
 def dashboard():
     deathData = getMonthlyDeathsData()
+    del deathData[-1]
     jsonDeathData = str(JSONEncoder().encode(deathData))
 
     return render_template('dashboard.html', jsonDeathData = jsonDeathData)
