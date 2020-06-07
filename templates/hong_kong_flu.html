@@ -7,7 +7,7 @@
     <script src="http://d3js.org/d3.v5.min.js" charset="utf-8"></script>
    
 
-    <script type="text/javascript" src="/renderPlotly.js"></script>
+    <script type="text/javascript" src="/renderPlotlyHK.js"></script>
     <!-- <script src="{{url_for('static', filename='renderPlotly.js')}}"></script> -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -31,6 +31,13 @@
           width: 100%; /* Set width to 100% */
           margin: auto;
           min-height:200px;
+      }
+      #underline {
+      text-decoration: underline;
+      }
+      
+      .center{
+        align-items: center;
       }
 
       /* Hide the carousel text when the screen is less than 600 pixels wide */
@@ -62,23 +69,30 @@
 
 
           <div class="container text-center">
-            <h3>Hong Kong Flu</h3><br>
+            <h1 id="underline">Hong Kong Flu 1968-1969</h1><br>
             <div class="row">
-              <div class="col-sm-4">
-                <br>
-                <br>
+              <div class="col-sm-12">
+                <img src="hongkongflu.png" style="float:center;width:300px;height:310px;border-radius: 1px;">
+                <img src="influenza_virus.png" style="float:center;width:300px;height:310px;border-radius: 1px">
+              </div>  
+            </div>
+            <br>
+            <br>
 
-                
-               
-                <img src="hongkongflu.png" style="float:right;width:300px;height:310px;">
+            <div class="row">
+              <div class="col-sm-12">
+                <img src="augustine_chart_hk.png" style=" float:center;
+              ;width:750px;height:450px">
               </div>
-            
-          <br>
-          <br>
+            </div>
           
-          <!-- <button id = "myButtonOne" type="button" class="btn btn-secondary" onClick="renderDowOverGoldPlot('myPlot',{ data })">Button One</button>           -->
-          <button id = "myButtonOne" type="button" class="btn btn-secondary" onClick="renderDowOverGoldPlot('swineDowGold',{{ data1 }} )">DOW over Gold</button>
-          <button id = "myButtonTwo" type="button" class="btn btn-secondary" onClick="renderDeathsMonthly('deaths',{{data2}})">Yearly Deaths</button>
+            <div class="buttons">
+              <button id = "myButtonOne" type="button" class="btn btn-secondary center"  onClick="renderDowOverGoldPlot('swineDowGold',{{ data1 }} )">DOW/Gold Ratio </button>
+              <button id = "myButtonTwo" type="button" class="btn btn-secondary" onClick="renderDeathsMonthly('deaths',{{data2}})">Yearly US Deaths</button>
+            </div>
+          </div>
+
+           
 
             
     </div>
