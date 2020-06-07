@@ -1,1 +1,0 @@
-At this moment I'm currently researching the library to find all the features that can be used in this project.
