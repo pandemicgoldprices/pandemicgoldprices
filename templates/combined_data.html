@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>COVID-19</title>
+    <script src="http://d3js.org/d3.v5.min.js" charset="utf-8"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    <script src="{{url_for('static', filename='index.js')}}"></script>
+    <script src="{{url_for('static', filename='renderPlotly.js')}}"></script>
+    <script src="{{url_for('static', filename='renderCountry.js')}}"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */
+        .navbar {
+          margin-bottom: 0;
+          border-radius: 0;
+        }
+
+        /* Add a gray background color and some padding to the footer */
+        footer {
+          background-color: #f2f2f2;
+          padding: 25px;
+        }
+
+      .carousel-inner img {
+          width: 100%; /* Set width to 100% */
+          margin: auto;
+          min-height:200px;
+      }
+
+      /* Hide the carousel text when the screen is less than 600 pixels wide */
+      @media (max-width: 600px) {
+        .carousel-caption {
+          display: none;
+        }
+      }
+      </style>
+      </head>
+    <body>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="introduction">Gold Diggers</a>
+              </div>
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="dashboard">Dashboard</a></li>
+                <li><a href="spanish_flu">Spanish Flu</a></li>
+                <li><a href="asian_flu">Asian Flu</a></li>
+                <li><a href="hong_kong_flu">Hong Kong Flu</a></li>
+                <li><a href="swine_flu">Swine Flu</a></li>
+                <li><a href="coronavirus">COVID-19</a></li>
+              </ul>
+            </div>
+          </nav>
+        
+ 
+ <br>
+ <div>
+    Spanish Flu	1918 jan –1920 dec 	50 million dead	H1N1 virus
+    <br>
+    Asian Flu	1957 jan –1958	1.5 to 2 million dead	H2N2 virus
+    <br>
+    Hong Kong Flu	1968 july – 1970 march	1 million dead	H3N2 virus
+    <br>
+    Swine Flu	2009 april –2010	over 284,000	dead novel H1N1 virus 
+    <br>
+    Covid 19 2019 dec -present 393,000 (june 7th) SARS COV 2 virus 
+    
+ </div>
+
+ <div class="col-sm-8">
+
+  <h3>Visualisations</h3>
+  <br>
+  
+
+
+  <div class="container">
+      <div class="col-md-6" style="padding-left: 0px;  padding-right: 0px;">
+        <img src="{{url_for('static', filename='/imgs/combined/spanish.png')}}"  class="img-responsive">
+      </div>
+      <div class="col-md-6" style="padding-left: 0px;  padding-right: 0px;">
+        <img src="{{url_for('static', filename='/imgs/combined/asianflu.png')}}"  class="img-responsive">
+      </div>
+  </div>
+
+  <div class="container">
+      <div class="col-md-6" style="padding-left: 0px;  padding-right: 0px;">
+        <img src="{{url_for('static', filename='/imgs/combined/hkflu.png')}}"  class="img-responsive">
+      </div>
+      <div class="col-md-6" style="padding-left: 0px;  padding-right: 0px;">
+        <img src="{{url_for('static', filename='/imgs/combined/swineflu.png')}}"  class="img-responsive">
+      </div>
+  </div>
+
+  <div class="container">
+    <div class="col-md-6" style="padding-left: 0px;  padding-right: 0px;">
+      <img src="{{url_for('static', filename='/imgs/combined/covid.png')}}"  class="img-responsive">
+    </div>
+    <div class="col-md-6" style="padding-left: 0px;  padding-right: 0px;">
+      <img src="{{url_for('static', filename='/imgs/combined/deathsratiorealgold.png')}}"  class="img-responsive">
+    </div>
+</div>
+
+<div class="container">
+  <div class="col-md-6" style="padding-left: 0px;  padding-right: 0px;">
+    <img src="{{url_for('static', filename='/imgs/combined/dowdivrealgoldvscpi.png')}}"  class="img-responsive">
+  </div>
+  <div class="col-md-6" style="padding-left: 0px;  padding-right: 0px;">
+    <img src="{{url_for('static', filename='/imgs/combined/World_Gold_production_1900-2014.png')}}"  class="img-responsive">
+  </div>
+</div>
+
+ 
+
+</div>
+
+    </body>
+
+</html>
+
