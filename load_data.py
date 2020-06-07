@@ -14,8 +14,8 @@ def load():
     #GOLD_df = pd.read_csv('data/GOLD_monthly_cleaned.csv', encoding='utf-8', delimiter=',', engine='python')
     #DJIA_df = pd.read_csv('data/DJIA_monthly_cleaned.csv', encoding='utf-8', delimiter=',', engine='python')
 
-    combo_df = pd.read_csv('data/dow_gold_div_change_1915_2020.csv', encoding='utf-8', delimiter=',', engine='python')
-    deaths_df = pd.read_csv('data/pandemicmonthlydeaths.csv', encoding='utf-8', delimiter=',', engine='python')
+    combo_df = pd.read_csv('data/dow_real_gold_div_change_1915_2020_cpi_with_charts.csv', encoding='utf-8', delimiter=',', engine='python')
+    deaths_df = pd.read_csv('data/pandemicmonthlydeathsrealgold.csv', encoding='utf-8', delimiter=',', engine='python')
    # DJIA_df.rename(columns={"yearmonth_str": "date"})
 
 
