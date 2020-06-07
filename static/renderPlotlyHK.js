@@ -1,4 +1,6 @@
 
+
+
 function apiData(divId, data){
   console.log(data)
 
@@ -211,7 +213,7 @@ var layout = {
   width: 1200,
   height: 600,
   xaxis: {
-    title: 'Months'},
+    title: 'Hong Kong Flu 07/1968-12/1969'},
     yaxis: {
       title: "DOW/GOLD ratio",
       showlegend:true   
@@ -277,6 +279,7 @@ Plotly.newPlot(divId, plotData2, layout);
 
 
 }
+
 
 
 

@@ -57,11 +57,11 @@
               </div>
               <ul class="nav navbar-nav">
                 <li class="active"><a href="dashboard.html">Dashboard</a></li>
-                <li><a href="spanish_flu.html">Spanish Flu</a></li>
-                <li><a href="asian_flu.html">Asian Flu</a></li>
-                <li><a href="hong_kong_flu.html">Hong Kong Flu</a></li>
-                <li><a href="swine_flu.html">Swine Flu</a></li>
-                <li><a href="coronavirus.html">COVID-19</a></li>
+                <li><a href="spanish_flu">Spanish Flu</a></li>
+                <li><a href="asian_flu">Asian Flu</a></li>
+                <li><a href="hong_kong_flu">Hong Kong Flu</a></li>
+                <li><a href="swine_flu">Swine Flu</a></li>
+                <li><a href="coronavirus">COVID-19</a></li>
               </ul>
             </div>
           </nav>
@@ -79,17 +79,28 @@
             <br>
             <br>
 
-            <div class="row">
-              <div class="col-sm-12">
-                <img src="augustine_chart_hk.png" style=" float:center;
-              ;width:750px;height:450px">
-              </div>
-            </div>
-          
             <div class="buttons">
               <button id = "myButtonOne" type="button" class="btn btn-secondary center"  onClick="renderDowOverGoldPlot('swineDowGold',{{ data1 }} )">DOW/Gold Ratio </button>
               <button id = "myButtonTwo" type="button" class="btn btn-secondary" onClick="renderDeathsMonthly('deaths',{{data2}})">Yearly US Deaths</button>
             </div>
+            <br>
+            <br>
+            <br>
+
+
+            <div class="row">
+              <div class="col-sm-12">
+                <img src="hk1.jpg" style=" float:center;
+              ;width:550px;height:350px">
+              </div>
+            </div>
+           
+            
+          
+            <!-- <div class="buttons">
+              <button id = "myButtonOne" type="button" class="btn btn-secondary center"  onClick="renderDowOverGoldPlot('swineDowGold',{{ data1 }} )">DOW/Gold Ratio </button>
+              <button id = "myButtonTwo" type="button" class="btn btn-secondary" onClick="renderDeathsMonthly('deaths',{{data2}})">Yearly US Deaths</button>
+            </div> -->
           </div>
 
            
