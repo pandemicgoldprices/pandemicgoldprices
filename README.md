@@ -9,7 +9,7 @@ List of pandemics to be studied:
 2009–2010: Swine Flu (H1N1) - Todd M.  
 2019-Present: COVID-19 - Sean W.
 
-Note:  
+**Note:**  
 The Jupyter Notebook file "fred-gold-dow-api.ipynb" uses this repository: https://github.com/mortada/fredapi.
 To get it working:  
 1) from a terminal window in the directory where you launch the notebook, do a $pip install fredapi  
