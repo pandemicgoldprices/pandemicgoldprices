@@ -77,7 +77,7 @@
 
 /* Place the container to the right */
 .right {
-  left: 25%;
+  left: 33%;
 }
 
 /* Add arrows to the left container (pointing right) */
@@ -150,7 +150,7 @@
 
   /* Make all right containers behave like the left ones */
   .right {
-  left: -75px;
+  left: -25px;
   }
 }
 
@@ -164,6 +164,22 @@
   padding-right: 8px;
   padding-left: 3px;
 }
+
+.shadow{
+  -webkit-box-shadow: 10px 10px 5px -10px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px -10px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 5px -10px rgba(0,0,0,0.75);
+  border-radius: 10px;
+}
+
+.shadow-r{
+  -webkit-box-shadow: -10px 11px 5px -10px rgba(0,0,0,0.75);
+  -moz-box-shadow: -10px 11px 5px -10px rgba(0,0,0,0.75);
+  box-shadow: -10px 11px 5px -10px rgba(0,0,0,0.75);
+  border-radius: 8px;
+}
+
+
     </style>
 
 </head>
@@ -333,89 +349,10 @@
 
           </div>
 
-          <div class="w3-card w3-white w3-round w3-margin"><br>
-            <hr class="w3-clear">
-            <div class="timeline">
-              <div class="container left">
-
-                <div class="content">
-                  <h3>1918-1919 Spanish Flu</h3>
-
-                    <img src="{{url_for('static', filename='/imgs/combined/spanish.png')}}"  class="img-responsive">
-
-                  <ul>
-                    <li>Spanish Flu 1918 jan – 1920 dec 50 million dead H1N1 virus</li>
-                    <li>Despite WWI and a raging pandemic the price of gold remained virturally unchaged at 1.85%</li>
-                    <li>Monetary policy and interest rates contributed for the price of gold to grow at 1.908% per year for 13 years</li>
-                    <li>In 1933 the Brentton Woods accord between WWI allies passed this agreement peg an onze of gold at $35 US dollars </li>
-                    <li>The FDR and his administration breaks its promis to redeem the dollar for gold</li>
-                    <li>Additionally the US government outlaws regular transactions in gold coins</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="container right">
-                <div class="content">
-                  <h3>Asian Flu 1957 - 1958</h3>
-
-                  <img src="{{url_for('static', filename='/imgs/combined/asianflu.png')}}"  class="img-responsive">
-
-
-                  <ul>
-                  <li> Asian Flu	1957 jan –1958	1.5 to 2 million dead	H2N2 virus</li>
-                  <li>It's been 25 years since the Brentton Woods agreement and the price of gold has remained unchaged at $35 dollars </li>
-                  <li>In August 1957, the country slipped into a recession that would increase unemployment by 7 percent and reduce corporate profits by 25 percent by April 1958</li>
-                  <li>The price of gold goes completely unaffected during this pandemic</li>
-                </ul>
-                </div>
-              </div>
-              <div class="container left">
-                <div class="content">
-                  <h3>Hong Kong Flu 1968</h3>
-
-                  <img src="{{url_for('static', filename='/imgs/combined/hkflu.png')}}"  class="img-responsive">
-
-
-                  <ul>
-                    <li>Hong Kong Flu	1968 july – 1970 march	1 million dead	H3N2 virus
-                    </li>
-                    <li>For the first time in 35 years the price of gold jumps to $41 in Jan of 1968</li>
-                    <li>Through the duration of this pandemic between 1968 - 1969 the price of gold grows at 3.89%</li>
-                    <li>It's impossible to speak of 1968 without mentioning the Vietnam War and its effects on the economy</li>
-                    <li>The H3N2 virus that caused the 1968 pandemic is still in circulation today and is considered to be a strain of seasonal influenza.</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="container right">
-                <div class="content">
-                  <h3>Swine Flu 2009</h3>
-
-                  <img src="{{url_for('static', filename='/imgs/combined/swineflu.png')}}"  class="img-responsive">
-
-                  <li>Swine Flu	2009 april –2010	over 284,000	dead novel H1N1 virus</li>
-                  <li>No longer link by the gold standard, the price of gold is subject to market fluctuations and supply and demand like to other commodoties</li>
-                  <li>Price of gold grew by 33% in between april-2009 and april 2010 that coincides with the Swine Flu</li>
-                  <li>The great recession wich lasted between Dec-2007 and Jun-2009 </li>
-                  <li>The FDR and his administration breaks its promis to redeem the dollar for gold</li>
-                  <li>Additionally the US government outlaws regular transactions in gold coins</li>
-                </div>
-              </div>
-              <div class="container left">
-                <div class="content">
-                  <h3>Covid-19</h3>
-
-                  <img src="{{url_for('static', filename='/imgs/combined/covid.png')}}"  class="img-responsive">
-                  <ul>
-                    <li>Covid 19 2019 dec -present 393,000 (june 7th) SARS COV 2 virus</li>
-                    <li>The price of gold jump 24% in the span of three months</li>
-                    <li>World </li>
-                    <li></li>
-                    <li></li>
-                  </ul>
-
-                </div>
-              </div>
-            </div>
-          </div>
+          <!-- <div class="w3-card w3-white w3-round w3-margin"><br>
+            <hr class="w3-clear"> -->
+            <!-- </div>
+          </div> -->
 
         <!-- End Middle Column -->
         </div>
@@ -461,6 +398,89 @@
 
     <!-- End Page Container -->
     </div>
+
+    <!-- timeline begins -->
+
+    <div class="timeline">
+      <div class="container left shadow">
+
+        <div class="content">
+          <h3>1918-1919 Spanish Flu</h3>
+
+            <img src="{{url_for('static', filename='/imgs/combined/spanish.png')}}"  class="img-responsive">
+
+          <ul>
+            <li>Spanish Flu 1918 jan – 1920 dec 50 million dead H1N1 virus</li>
+            <li>Despite WWI and a raging pandemic the price of gold remained virturally unchaged at 1.85%</li>
+            <li>Monetary policy and interest rates contributed for the price of gold to grow at 1.908% per year for 13 years</li>
+            <li>In 1933 the Brentton Woods accord between WWI allies passed this agreement peg an onze of gold at $35 US dollars </li>
+            <li>The FDR and his administration breaks its promis to redeem the dollar for gold</li>
+            <li>Additionally the US government outlaws regular transactions in gold coins</li>
+          </ul>
+        </div>
+      </div>
+      <div class="container right shadow-r">
+        <div class="content">
+          <h3>Asian Flu 1957 - 1958</h3>
+
+          <img src="{{url_for('static', filename='/imgs/combined/asianflu.png')}}"  class="img-responsive">
+
+
+          <ul>
+          <li> Asian Flu	1957 jan –1958	1.5 to 2 million dead	H2N2 virus</li>
+          <li>It's been 25 years since the Brentton Woods agreement and the price of gold has remained unchaged at $35 dollars </li>
+          <li>In August 1957, the country slipped into a recession that would increase unemployment by 7 percent and reduce corporate profits by 25 percent by April 1958</li>
+          <li>The price of gold goes completely unaffected during this pandemic</li>
+        </ul>
+        </div>
+      </div>
+      <div class="container left shadow">
+        <div class="content">
+          <h3>Hong Kong Flu 1968</h3>
+
+          <img src="{{url_for('static', filename='/imgs/combined/hkflu.png')}}"  class="img-responsive">
+
+
+          <ul>
+            <li>Hong Kong Flu	1968 july – 1970 march	1 million dead	H3N2 virus
+            </li>
+            <li>For the first time in 35 years the price of gold jumps to $41 in Jan of 1968</li>
+            <li>Through the duration of this pandemic between 1968 - 1969 the price of gold grows at 3.89%</li>
+            <li>It's impossible to speak of 1968 without mentioning the Vietnam War and its effects on the economy</li>
+            <li>The H3N2 virus that caused the 1968 pandemic is still in circulation today and is considered to be a strain of seasonal influenza.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="container right shadow-r">
+        <div class="content">
+          <h3>Swine Flu 2009</h3>
+
+          <img src="{{url_for('static', filename='/imgs/combined/swineflu.png')}}"  class="img-responsive">
+
+          <li>Swine Flu	2009 april –2010	over 284,000	dead novel H1N1 virus</li>
+          <li>No longer link by the gold standard, the price of gold is subject to market fluctuations and supply and demand like to other commodoties</li>
+          <li>Price of gold grew by 33% in between april-2009 and april 2010 that coincides with the Swine Flu</li>
+          <li>The great recession wich lasted between Dec-2007 and Jun-2009 </li>
+          <li>The FDR and his administration breaks its promis to redeem the dollar for gold</li>
+          <li>Additionally the US government outlaws regular transactions in gold coins</li>
+        </div>
+      </div>
+      <div class="container left shadow">
+        <div class="content">
+          <h3>Covid-19</h3>
+
+          <img src="{{url_for('static', filename='/imgs/combined/covid.png')}}"  class="img-responsive">
+          <ul>
+            <li>Covid 19 2019 dec -present 393,000 (june 7th) SARS COV 2 virus</li>
+            <li>The price of gold jump 24% in the span of three months</li>
+            <li>The American economy has come to screetching halt</li>
+            <li>Although the price of gold has surged other commodoties such as oil has plunge in the market.</li>
+            <li>Americans are under quarantine and lockdown</li>
+          </ul>
+
+        </div>
+      </div>
+
     <br>
 
     <!-- Footer -->
