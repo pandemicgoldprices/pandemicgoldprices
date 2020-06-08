@@ -1,5 +1,4 @@
 from flask import Flask, render_template, jsonify, redirect, url_for, request
-# from scrape import scrape
 from dao.database import getLatest, getRangeDowData, getMonthlyDeathsData
 from load_data import load
 from fredapi import Fred
@@ -13,15 +12,11 @@ class JSONEncoder(json.JSONEncoder):
             return str(o)
         return json.JSONEncoder.default(self, o)
 
-
 load()
-
-#print(newData)
 
 # Create an instance of our Flask app.
 app = Flask(__name__, static_url_path='')
 
-# update()
 # index
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -63,34 +58,30 @@ def spanish_flu():
 def asian_flu():
     data = getLatest()
     return render_template('asian_flu.html', data = data)
+
 @app.route('/conclusions')
 def conclusions():
-    
     return render_template('conclusions.html')
 
 @app.route('/hong_kong_flu')
 def hong_kong_flu():
     hong_kong_data = getRangeDowData(1968,1973)
-    hong_kong_data1=getMonthlyDeathsData()
+    hong_kong_data1 = getMonthlyDeathsData()
     json_hong_kong_data1 = str(JSONEncoder().encode(hong_kong_data1))
     json_hong_kong_data = str(JSONEncoder().encode(hong_kong_data))
-    return render_template('hong_kong_flu.html', data1 = json_hong_kong_data,data2=json_hong_kong_data1)
+    return render_template('hong_kong_flu.html', data1 = json_hong_kong_data, data2 = json_hong_kong_data1)
 
 
 @app.route('/swine_flu')
 def swine_flu():
     newData = getRangeDowData(2009,2015)
     jsonNewData4 = str(JSONEncoder().encode(newData))
-    #print("swine flue data ")
-    print(jsonNewData4)
     return render_template('swine_flu.html', data = jsonNewData4)
 
 @app.route('/combined_data')
 def combined_data():
     newData = getRangeDowData(1957,1960)
     jsonNewData5 = str(JSONEncoder().encode(newData))
-    #print("swine flue data ")
-    #print(jsonNewData4)
     return render_template('combined_data.html', data = jsonNewData5)
 
 
@@ -114,7 +105,6 @@ def coronavirus():
     resultdata['date'] = resultdata['date'].astype(str)
     rdata = resultdata.to_json(orient='records')
     #resultresultdata.itterrows()
-    print(rdata)
     return render_template('coronavirus.html', data = rdata)
 
 
