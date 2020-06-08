@@ -40,6 +40,10 @@
         align-items: center;
       }
 
+      p{
+        border: 1px solid black;
+      }
+
       /* Hide the carousel text when the screen is less than 600 pixels wide */
       @media (max-width: 600px) {
         .carousel-caption {
@@ -76,22 +80,44 @@
               <div class="col-sm-12">
                 <img src="hongkongflu.png" style="float:center;width:300px;height:310px;border-radius: 1px;">
                 <img src="influenza_virus.png" style="float:center;width:300px;height:310px;border-radius: 1px">
+
               </div>
+
+                <br>
+                <br>
+
+                <p>The 1968 pandemic was caused by an influenza A (H3N2) virus comprised of two genes from an avian influenza A virus, including a new H3 hemagglutinin, but also contained the N2 neuraminidase from the 1957 H2N2 virus. 
+                  It was first noted in the United States in September 1968. The estimated number of deaths was 1 million worldwide and about 100,000 in the United States.
+                   Most excess deaths were in people 65 years and older. The H3N2 virus continues to circulate worldwide as a seasonal influenza A virus. 
+                   Seasonal H3N2 viruses, which are associated with severe illness in older people, undergo regular antigenic drift.</p>
+              </div>  
+
             </div>
             <br>
             <br>
+
+            <div class="buttons">
+              <button id = "myButtonOne" type="button" class="btn btn-secondary center"  onClick="renderDowOverGoldPlot('swineDowGold',{{ data1 }} )">Display DOW/Gold Ratio </button>
+              <button id = "myButtonTwo" type="button" class="btn btn-secondary" onClick="renderDeathsMonthly('deaths',{{data2}})">Display Yearly US Deaths</button>
+            </div>
+            <br>
+            <br>
+            <br>
+
 
             <div class="row">
               <div class="col-sm-12">
-                <img src="augustine_chart_hk.png" style=" float:center;
-              ;width:750px;height:450px">
+                <img src="hk1.jpg" style=" float:center;
+              ;width:550px;height:350px">
               </div>
             </div>
 
+
             <div class="buttons">
+
               <button id = "myButtonOne" type="button" class="btn btn-secondary center"  onClick="renderDowOverGoldPlot('swineDowGold',{{ data1 }} )">DOW/Gold Ratio </button>
               <button id = "myButtonTwo" type="button" class="btn btn-secondary" onClick="renderDeathsMonthly('deaths',{{data2}})">Yearly US Deaths</button>
-            </div>
+            </div> -->
           </div>
 
 
