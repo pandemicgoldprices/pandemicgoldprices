@@ -5,7 +5,6 @@
     <title>COVID-19</title>
     <script src="http://d3js.org/d3.v5.min.js" charset="utf-8"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-
     <script src="{{url_for('static', filename='index.js')}}"></script>
     <script src="{{url_for('static', filename='renderPlotly.js')}}"></script>
     <script src="{{url_for('static', filename='renderCountry.js')}}"></script>
@@ -15,152 +14,133 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <style>
     /* Remove the navbar's default margin-bottom and rounded borders */
-        .navbar {
-          margin-bottom: 0;
-          border-radius: 0;
-        }
-
-        /* Add a gray background color and some padding to the footer */
-        footer {
-          background-color: #f2f2f2;
-          padding: 25px;
-        }
-
+      .navbar {
+        margin-bottom: 0;
+        border-radius: 0;
+      }
+      /* Add a gray background color and some padding to the footer */
+      footer {
+        background-color: #f2f2f2;
+        padding: 25px;
+      }
       .carousel-inner img {
           width: 100%; /* Set width to 100% */
           margin: auto;
           min-height:200px;
       }
-
       /* Hide the carousel text when the screen is less than 600 pixels wide */
       @media (max-width: 600px) {
         .carousel-caption {
           display: none;
         }
       }
-      </style>
+    </style>
     <body>
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-              <div class="navbar-header">
-                <a class="navbar-brand" href="/">Gold Diggers</a>
-              </div>
-              <ul class="nav navbar-nav">
-                <li ><a href="dashboard">Dashboard</a></li>
-                <li><a href="spanish_flu">Spanish Flu</a></li>
-                <li><a href="asian_flu">Asian Flu</a></li>
-                <li><a href="hong_kong_flu">Hong Kong Flu</a></li>
-                <li><a href="swine_flu">Swine Flu</a></li>
-                <li><a href="coronavirus">COVID-19</a></li>
-                <li><a href="combined_data">Charts</a></li>
-                <li class="active"><a href="conclusions">Conclusions</a></li>
-              </ul>
+      <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="/">Gold Diggers</a>
             </div>
-          </nav>
+            <ul class="nav navbar-nav">
+              <li ><a href="dashboard">Dashboard</a></li>
+              <li><a href="spanish_flu">Spanish Flu</a></li>
+              <li><a href="asian_flu">Asian Flu</a></li>
+              <li><a href="hong_kong_flu">Hong Kong Flu</a></li>
+              <li><a href="swine_flu">Swine Flu</a></li>
+              <li><a href="coronavirus">COVID-19</a></li>
+              <li><a href="combined_data">Charts</a></li>
+              <li class="active"><a href="conclusions">Conclusions</a></li>
+            </ul>
+          </div>
+        </nav>
+        <br>
+        <h2>Conclusions / Summary / Statistics / Methods</h2>
 
-
- <br>
- <h2>
-     Conclusions / summary / statistics / methods
-
- </h2>
-
- <div class="container text-left">
-  <h3>Conclusions</h3><br>
-  <div class="row">
-    <div class="col-sm-left">
-      <p>We attempted to answer the question "Is gold a good hedge during a pandemic.
-        We wondered if buying gold at the start of a pandemic would be a good idea.
-         The question is nuanced because it doesn't ask how long you plan to keep gold for.
-         We decided to use 2 benchmarks to analyse the question.
-         Since there are few pandemics we found it hard to do much serious statistical analysis because of the low sample sizes.
-         There have been only four large pandemics before COVID 19 when a series of financial data had been kept.
-         We also found it difficult to find accurate counts of deaths in the USA
-          in particular since these have not been recorded accurately in the past.
-          We did find some good monthly deaths for the 1958 and 1968 flu pandemics and there is plenty of data for covid 19 which occurded in the "data age"<div class=""></div>
-        In order to do some statistics we had the idea that attempting to correlate market moves with the previous months deaths might be useful
-        since we had quite a few months worth of data ( say 30 ). We decided to use the Dow Jones industrial Index as a yardstick to measure the price of gold by.
-        since the beginning of the DOw it always been a higher number than GOLD. The ratio of DOW/GOLD has varied a great deal over
-        the last 100 years. During the Spanish Flu it was closer to say 3. Around 2000 it was as high as 40 and recently it is around 15.
-        If that number reached the value of One then gold would be at it's highest price relative to the DOW ever.
-        As a general rule it is probably worth noting that generally that value has tended to increase ie stocks have outperformed
-        gold in the long term. All the figures presented here perhaps merely reflect underlying trends not a cause and effect.
-        Data was found in various sources :</p>
-        <p>
-         <p> Some data we had to pay for ( $4 ! ). We first looked at the change in the DOW/GOLD based on the previous months deaths during the 1957 , 1968 and COVID pandemics.
-Putting all the pandemics into one data set we could find very little correlation between the deaths and the market.
-We attempting to draw a line of correlation but the points are far from it with many outliers. The "R squared" valuie is 0.005 which suggest no correlation at all.
-You would want an R squared as high as say 0.7 to make a statistical inference.
-
-
-We then looked at the change in the DOW from the start of each pandemic.
-https://github.com/pandemicgoldprices/pandemicgoldprices/blob/master/data/change_in_dow_v_gold_pandemic_outset.csv
-( graph )
-
-We couldn't find a clear movement in either direction up or down during each pandemic. The movement has been the largest in covid 19 ( a 3 percent initial swing towards gold).
-Within a year however in the previous pandemics before 2020 any gains were quickly erased. What are data shows is perhaps noise in the data unrelated to the pandemic market response. 
-In all 4 pandemics 1918,1958,1969,2009 the ratio of DOW/GOLD swings back and forth every month or so and there is very little apparent trend. 
-We noted the huge swing towards gold in the early 1970s after the Hong Kong flu. This we decided was most likely due to the extraordinary inflation of the period.
-We did notice greater volatility after the end of Bretton Woods ( in the US the gold standard was left in jan 1971). Inflation was high and fluctuating in the 70s and 80s and the market volatility can perhaps be seen in the larger swings in the index. 
-We noted the difficulty of the very few pandemics and the very large range of years. In economics most data is more useful/accurate in smaller time periods. 
-Comparisons of similar measures of value are not necessarily equal in different eras. It would have been interesting to say compare say our ratio and CPI for each pandemic or our ratio and Gold Supply for each pandemic but we had limited time to achieve this.
-We thought that we had at least answered the question that it was unlikely that purchasing gold at the beginning of a pandemic was likely to be worth it after a year for four pandemics in the past based on our calculations.
-We thought it was also quite significant that in the short term we could find no correlation between death rates and market movements in a fairly sizeable sample of say 30 months of data.
-Because of this we decided that we could not reject the null hypothesis that buying gold in a pandemic may not be a good hedge against the market. 
-
-
-
-        </p>
-
-    </div>
-  </div>
-
-
-  <div class="container text-left">
-    <h3>Methods</h3><br>
-    <div class="row">
-      <div class="col-sm-left">
-        <p>We searched for data initially. Deciding on the NY times github repository of covid data.
-          https://github.com/nytimes/covid-19-data
-          We used the St louis Fred API for recent market data
-          https://fred.stlouisfed.org/
-          Other sources of older data included.
-          goldpricehistroy1850to2011 : http://www.nma.org/pdf/gold/his_gold_prices.pdf
-          older data : https://www.measuringworth.com/datasets/gold/result.php
-          pandemic deaths per month https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2374803/
-          covid deaths per month : https://www.cdc.gov/nchs/nvss/vsrr/covid19/index.htm
-
-          First we compiled the older data into spreadsheets in excel and did some cleaning and graphing .
-          These were the 3 final data sets we compiled in csv form
-
-          DOW and GOLD data and the ratio for 100 years :
-
-          https://github.com/pandemicgoldprices/pandemicgoldprices/blob/master/data/dow_gold_div_change_1915_2020.csv
-
-          Change in the Ratio with it set to zero from the start of each pandemic.
-          Each month of each pandemic the change in the ration is measured from pandemic outset.
-          https://github.com/pandemicgoldprices/pandemicgoldprices/blob/master/data/change_in_dow_v_gold_pandemic_outset.csv
-          A dataset that shows the monthly deaths for 3 pandemics ( 1958, 1969, 2020) and the change in the following month ratio.
-          https://github.com/pandemicgoldprices/pandemicgoldprices/blob/master/data/pandemicmonthlydeaths.csv
-
-          We created a mongoDB database and wrote code in python using pandas and other methods to store 2 of the datasets in mongo under different schema names.
-          In what could be described as a "merely academic" process we decided to reload the CSV files into mongo and empty the DB
-          and reload when the flask app is started. We note we could have just used a csv file for the whole shebang but incorporating mongo was a goal.
-
-          We created a flask application in python. In the flask application we created routes for the various webpages.
-          in the flask app when the covid19 page is called the application responds to the get request by a call to the Fred API for the last 6 months or so of data.
-          At the front end that webpage loads CSV data from the NYTIMES github directly. Buttons allow the recent NYTIMES and FRED data to be displayed.
-          Graphs of the monthly deaths / market moves and the change in the dow for each pandemic where created in excel.
-
-          For the other pandemics the flask route requests data from mongo for a range of years which is then plotted in the front end using plotly and also chart.js.
-
-          Webpages were stylized using BOOTCAMP and CSS.</p>
-      </div>
-
-
-
-
-
-</body>
-
+        <div class="container text-left">
+          <h3>Conclusions</h3><br>
+          <div class="row">
+            <div class="col-sm-left">
+              <p>
+                We attempted to answer the following question: "Is gold a good hedge during a pandemic?" 
+                We wondered if buying gold at the start of a pandemic would be a good idea. 
+                The question is actually quite nuanced because it doesn't ask how long you plan to keep gold for. 
+                We decided to use two benchmarks to analyze the question... 
+                Since there are few pandemics we found it hard to do much serious statistical analysis because of the low sample sizes. 
+                There have been only four large pandemics before COVID-19 during which a series of financial data had been kept. 
+                We also found it difficult to find accurate counts of deaths in the USA in particular since these have not been recorded accurately in the past. 
+                We did find some good monthly deaths for the 1958 and 1968 flu pandemics; and there is plenty of data for COVID-19 which occurded in the "data age". 
+                In order to do some statistical analysis we had the idea that attempting to correlate market moves with the previous months deaths might be useful since we had quite a few months-worth of data (say 30). 
+                We decided to use the Dow Jones Industrial Average as a yardstick to measure the price of gold. 
+                Since the beginning of the Dow, its price has always been a higher number than that of Gold. 
+                The ratio of DJIA/Gold has varied a great deal over the last 100 years. 
+                During the Spanish Flu, it was closer to three. Around 2000, it was as high as 40 and, recently, it is around 15. 
+                If that number reached the value of one, then gold would be at its highest price relative to the Dow ever. 
+                As a general rule, it is probably worth noting that this value has tended to increase; i.e., stocks have outperformed gold in the long-term. 
+                All the figures presented here perhaps merely reflect underlying trends, and not a cause-and-effect.
+                Data was found in various sources:
+              </p>
+              <p>
+                Some data we had to pay for ($4!). 
+                We first looked at the change in the Dow/Gold ratio based on the previous months deaths during the 1957, 1968, and 2019 pandemics. 
+                Putting all of the pandemics into one data set, we could find very little correlation between the deaths and the market. 
+                We attempted to draw a line of correlation; however, there are many outliers. 
+                The "R squared" valuie is 0.005 which suggests no correlation at all. 
+                You would want an R-squared as high as 0.7 to make a statistical inference. 
+                We then looked at the change in the Dow from the start of each pandemic. 
+                https://github.com/pandemicgoldprices/pandemicgoldprices/blob/master/data/change_in_dow_v_gold_pandemic_outset.csv 
+                We couldn't find a clear movement in either direction - up or down - during each pandemic. 
+                The largest movement was in the COVID-19 dataset (a three percent initial swing towards gold). 
+                In the previous pandemics before 2020, however, any gains were quickly erased within a year. 
+                What our data shows is perhaps noise unrelated to the market's response to the pandemic alone. 
+                In all, in four pandemics (1918, 1958, 1969, and 2009) the ratio of Dow/Gold swings back and forth every month or so, and there is very little apparent trend. 
+                We noted the huge swing towards gold in the early 1970s after the Hong Kong flu. 
+                This we decided was most likely due to the extraordinary inflation of the period. 
+                We did notice greater volatility after the end of Bretton Woods (in the US, the gold standard was left in January of 1971). 
+                Inflation was high and fluctuating in the 70s and 80s, and the market volatility can perhaps be seen in the larger swings in the index. 
+                We noted the difficulty of the very few pandemics and the very large range of years. 
+                In economics, most data is more useful/accurate in smaller time periods. 
+                Comparisons of similar measures of value are not necessarily equal in different eras. 
+                It would have been interesting to compare, say, our ratio and CPI for each pandemic (or our ratio and Gold Supply for each pandemic) but we had limited time to achieve this. 
+                We thought that we had at least answered the question that it was unlikely that purchasing gold at the beginning of a pandemic was likely to be worth it after a year (based on the four past pandemics in our calculations. 
+                We thought it was also quite significant that - in the short term - we found no correlation between death rates and market movements in a fairly sizeable sample of 30 months of data. 
+                Because of this, we decided that we could not reject the null hypothesis that buying gold in a pandemic is a good hedge against the market.
+              </p>
+            </div>
+          </div>
+          <div class="container text-left">
+            <h3>Methods</h3><br>
+            <div class="row">
+              <div class="col-sm-left">
+                <p>We searched for data initially, deciding on the NY Times github repository of COVID-19 data: https://github.com/nytimes/covid-19-data.
+                  We used the St. Louis Fred API for recent market data :https://fred.stlouisfed.org/.
+                  Other sources of older data included: 
+                  Gold Price History 1850-2011: http://www.nma.org/pdf/gold/his_gold_prices.pdf
+                  Older Data: https://www.measuringworth.com/datasets/gold/result.php
+                  Pandemic Deaths per Month: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2374803/
+                  COVID-19 Deaths per Month: https://www.cdc.gov/nchs/nvss/vsrr/covid19/index.htm
+                  First, we compiled the older data into spreadsheets in Microsoft Excel and did some cleaning and charting. 
+                  These were the three final data sets that we had compiled in CSV form. 
+                  Dow and Gold data and the ratio for 100 years:
+                  https://github.com/pandemicgoldprices/pandemicgoldprices/blob/master/data/dow_gold_div_change_1915_2020.csv
+                  Change in the Ratio with it set to zero from the start of each pandemic...
+                  each month of each pandemic the change in the ratio is measured from the pandemic outset. 
+                  https://github.com/pandemicgoldprices/pandemicgoldprices/blob/master/data/change_in_dow_v_gold_pandemic_outset.csv
+                  A dataset that shows the monthly deaths for three pandemics (1958, 1969, and 2019) and the change in the following month ratio. 
+                  https://github.com/pandemicgoldprices/pandemicgoldprices/blob/master/data/pandemicmonthlydeaths.csv
+                  We created a MongoDB database and wrote code in Python using pandas and other methods to store two of the datasets in the DB under different schema names. 
+                  In what could be described as a "merely academic" process, we decided to reload the CSV files into MongoDB and empty the DB,  as well as reload when the flask app is started. 
+                  We noted that we could have just used a CSV file for the whole shebang, but incorporating MongoDB was a goal. 
+                  We then created a flask application in Python. 
+                  In the flask application, we created routes for the various webpages, and when the COVID-19 page is called, the application responds to the get request by a call to the Fred API for the last 6 months (or so) of data. 
+                  At the front end, that webpage loads CSV data from the NYT GitHub directly.
+                  Buttons allow the recent NYT and Federal Reserve data to be displayed. 
+                  Graphs of the monthly deaths / market moves, as well as the change in the Dow for each pandemic, where created again in Excel.
+                  For the other pandemics, the Flask route requests data from our DB for a range of years. 
+                  This is then plotted in the front end using Plotly and also Charts.js.
+                  Finally, webpages were stylized using Bootstrap and CSS3.
+                </p>
+              </div>
+            </div>
+          </div>
+  </body>
 </html>
