@@ -61,8 +61,9 @@ def spanish_flu():
 
 @app.route('/asian_flu')
 def asian_flu():
-    data = getLatest()
+    data = ""
     return render_template('asian_flu.html', data = data)
+
 @app.route('/conclusions')
 def conclusions():
     
