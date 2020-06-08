@@ -1,6 +1,6 @@
 # pandemicgoldprices
 
-We are compiling data, analyzing it, and presenting it in order to answer the following question (in a statistical manner): "How will the COVID-19 pandemic influence the price of gold in relation to the Dow Jones Industrial Average?"  
+We are compiling data, analyzing it, and presenting it in order to answer the following question (in a statistical manner): "*How will the COVID-19 pandemic influence the price of gold in relation to the Dow Jones Industrial Average?*"  
 
 List of pandemics to be studied:  
 1918–1920: Spanish Flu (H1N1) - Ognjen S.  
@@ -14,4 +14,4 @@ The Jupyter Notebook file "fred-gold-dow-api.ipynb" uses this repository: https:
 To get it working:  
 1) from a terminal window in the directory where you launch the notebook, do a $pip install fredapi  
 2) visit https://research.stlouisfed.org/useraccount/apikey and get yourself an API key  
-3) in the first cell of the notebook, add your key into the "my_key" variable between the inverted commas; so "my_key = ''", "fred = Fred(api_key=my_key)", and finally restart and run the notebook  
+3) in the first cell of the notebook, add your key into the "my_key" variable between the inverted commas; so "my_key = ''", "fred = Fred(api_key=my_key)", and finally restart and run the notebook
