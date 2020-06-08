@@ -14,6 +14,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <style>
+
+  body {
+  background-image: url("{{url_for('static', filename='/imgs/covid.jpg')}}");
+  background-size: 440px;
+  background-repeat: repeat-y;
+}
     /* Remove the navbar's default margin-bottom and rounded borders */
         .navbar {
           margin-bottom: 0;
@@ -60,36 +66,55 @@
 
 
  <br>
- <div>
-  <img src="{{url_for('static', filename='/imgs/covid.jpg')}}" alt="CORONAVIRUS">
- </div>
- <div>
-   Coranvirus started Dec 2019 in China. Despite the potential destruction to the economy as yet it is made little dent in markets.
-   <br>
-   Presented below is some of the latest data.
-   <br>
-   CLICK THE BUTTONS BELOW TO SEE THE LATEST HEALTH AND MARKET DATA
-   <BR>
-    Data source is the NYTIMES github of coronavirus data and the St Louis Fed API . Fresh Data is retrieved each time the page is reloaded.
-    <br>
- </div>
- <div>
-  <button id = "myButton" type="button" class="btn btn-secondary" onClick="apiData('myPlot', {{ data }})">Click to Show Latest DOW/GOLD Data</button>
- </div>
 
- <H3> RECENT CHANGES IN RATIO OF DOW/GOLD FROM ST LOUIS FED API </H3>
-<div id ="myPlot"></div>
-<div>
-  <button id = "myButton2" type="button" class="btn btn-secondary" onClick="renderCountry()">Click to Show Latest NYTIMES COVID 19 Data</button>
+<div class="container text-left">
+  <div class="row">
+    <div class="col-sm-4">
+      <h1 style=font-size:62px>Coronavirus </h1>
+      <div>
+        <!-- <img src="{{url_for('static', filename='/imgs/covid.jpg')}}" alt="CORONAVIRUS"> -->
+       </div>
+       <br>
+       <p>
+         Coranvirus started Dec 2019 in China. Despite the potential destruction to the economy as yet it is made little dent in markets.
+         <br>
+         Presented below is some of the latest data.
+         <br>
+         CLICK THE BUTTONS BELOW TO SEE THE LATEST HEALTH AND MARKET DATA
+         <BR>
+          Data source is the NYTIMES github of coronavirus data and the St Louis Fed API . Fresh Data is retrieved each time the page is reloaded.
+          <br>
+         </p>
+       <div>
+        <button id = "myButton" type="button" class="btn btn-secondary" onClick="apiData('myPlot', {{ data }})">Click to Show Latest DOW/GOLD Data</button>
  </div>
-<H3> DAILY US CASES </H3>
-<div id ="dailycases"></div>
-<H3> DAILY US DEATHS </H3>
-<div id ="dailydeaths"></div>
-<H3> US CUMULATIVE CASES</H3>
-<div id="cases"></div>
-<H3> US CUMULATIVE DEATHS</H3>
-<div id="deaths"></div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <H3> RECENT CHANGES IN RATIO OF DOW/GOLD FROM ST LOUIS FED API </H3>
+      <div id ="myPlot"></div>
+      <div>
+        <button id = "myButton2" type="button" class="btn btn-secondary" onClick="renderCountry()">Click to Show Latest NYTIMES COVID 19 Data</button>
+      </div>
+      <H3> DAILY US CASES </H3>
+      <div id ="dailycases"></div>
+      <H3> DAILY US DEATHS </H3>
+      <div id ="dailydeaths"></div>
+      <H3> US CUMULATIVE CASES</H3>
+      <div id="cases"></div>
+      <H3> US CUMULATIVE DEATHS</H3>
+      <div id="deaths"></div>
+          </div>
+        </div>
+</div>
+  </div>
+</div>
+
+
+
+
 
 
 <!--
