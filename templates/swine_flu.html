@@ -34,6 +34,14 @@
         }
       }
       </style>
+       <style>
+          
+        body  {
+          background-image: url('/imgs/H1N1.png');
+          background-position: center top;
+          background-size: cover;
+        }
+       </style>
       </head>
     <body>
       <!-- navbar -->
@@ -56,18 +64,6 @@
       </nav>
     <!-- end of navbar -->
           <body>
-          <style>
-          
-           body  {
-          
-  background-image: url("{{url_for('static', filename='/imgs/covid19.jpg')}}");
-            
-            background-position: center top;
-            background-size: cover;
-           
-
-            }
-          </style>
         <div class="container text-center">
             <h3>DJIA vs. Gold Prices During the 1918 Pandemic (Swine Flu [H1N1])</h3>
             <br>
@@ -97,18 +93,17 @@ Obama weeks later declared a national emergency on Oct. 24, 2009. The CDC direct
             <br>
           </div>
             <div class="row">
-                <div class="col-sm-6"></div>
-                  <img src="DJIA_H1N1.jpg" alt="image" style="width:40%">
-            </div>  
-
+                <div class="col-sm-12">
+                  <center><img src="DJIA_H1N1.jpg" alt="image" style="width:40%"></center><br>
+              </div>  
+            </div>
              
         
-        <div class="row">
+            <div class="row">
               <div id ="swineDowGold">
               <div class="col-sm-12">
-                <button id = "myButtonOne" type="button" class="btn btn-secondary" onClick="renderDowOverGoldPlot('swineDowGold',{{ data }} )">Click to plot Dow Jones/GOLD ratio for SWINE FLU  </button>
+                <center><button id = "myButtonOne" type="button" class="btn btn-secondary" onClick="renderDowOverGoldPlot('swineDowGold',{{ data }} )">Click to plot Dow Jones/GOLD ratio for SWINE FLU  </button></center>
               </div>
-                 </div>
               </div>
             </div>
           <br>
