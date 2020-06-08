@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Hong Kong Flu</title>
     <script src="http://d3js.org/d3.v5.min.js" charset="utf-8"></script>
-   
+
 
     <script type="text/javascript" src="/renderPlotlyHK.js"></script>
     <!-- <script src="{{url_for('static', filename='renderPlotly.js')}}"></script> -->
@@ -35,7 +35,7 @@
       #underline {
       text-decoration: underline;
       }
-      
+
       .center{
         align-items: center;
       }
@@ -53,15 +53,17 @@
         <nav class="navbar navbar-default">
             <div class="container-fluid">
               <div class="navbar-header">
-                <a class="navbar-brand" href="introduction.html">Gold Diggers</a>
+                <a class="navbar-brand" href="/">Gold Diggers</a>
               </div>
               <ul class="nav navbar-nav">
-                <li class="active"><a href="dashboard.html">Dashboard</a></li>
+                <li ><a href="dashboard">Dashboard</a></li>
                 <li><a href="spanish_flu">Spanish Flu</a></li>
                 <li><a href="asian_flu">Asian Flu</a></li>
-                <li><a href="hong_kong_flu">Hong Kong Flu</a></li>
+                <li class="active"><a href="hong_kong_flu">Hong Kong Flu</a></li>
                 <li><a href="swine_flu">Swine Flu</a></li>
                 <li><a href="coronavirus">COVID-19</a></li>
+                <li><a href="combined_data">Charts</a></li>
+                <li><a href="conclusions">Conclusions</a></li>
               </ul>
             </div>
           </nav>
@@ -74,7 +76,7 @@
               <div class="col-sm-12">
                 <img src="hongkongflu.png" style="float:center;width:300px;height:310px;border-radius: 1px;">
                 <img src="influenza_virus.png" style="float:center;width:300px;height:310px;border-radius: 1px">
-              </div>  
+              </div>
             </div>
             <br>
             <br>
@@ -85,21 +87,21 @@
               ;width:750px;height:450px">
               </div>
             </div>
-          
+
             <div class="buttons">
               <button id = "myButtonOne" type="button" class="btn btn-secondary center"  onClick="renderDowOverGoldPlot('swineDowGold',{{ data1 }} )">DOW/Gold Ratio </button>
               <button id = "myButtonTwo" type="button" class="btn btn-secondary" onClick="renderDeathsMonthly('deaths',{{data2}})">Yearly US Deaths</button>
             </div>
           </div>
 
-           
 
-            
+
+
     </div>
     <div id="swineDowGold">
     </div>
     <div id='deaths'></div>
- </div>         
+ </div>
     </body>
 
 </html>

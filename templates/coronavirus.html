@@ -43,20 +43,22 @@
         <nav class="navbar navbar-default">
             <div class="container-fluid">
               <div class="navbar-header">
-                <a class="navbar-brand" href="introduction">Gold Diggers</a>
+                <a class="navbar-brand" href="/">Gold Diggers</a>
               </div>
               <ul class="nav navbar-nav">
-                <li class="active"><a href="dashboard">Dashboard</a></li>
+                <li><a href="dashboard">Dashboard</a></li>
                 <li><a href="spanish_flu">Spanish Flu</a></li>
                 <li><a href="asian_flu">Asian Flu</a></li>
                 <li><a href="hong_kong_flu">Hong Kong Flu</a></li>
                 <li><a href="swine_flu">Swine Flu</a></li>
-                <li><a href="coronavirus">COVID-19</a></li>
+                <li class="active"><a href="coronavirus">COVID-19</a></li>
+                <li><a href="combined_data">Charts</a></li>
+                <li><a href="conclusions">Conclusions</a></li>
               </ul>
             </div>
           </nav>
-        
- 
+
+
  <br>
  <div>
   <img src="{{url_for('static', filename='/imgs/covid.jpg')}}" alt="CORONAVIRUS">
@@ -64,7 +66,7 @@
  <div>
    Coranvirus started Dec 2019 in China. Despite the potential destruction to the economy as yet it is made little dent in markets.
    <br>
-   Presented below is some of the latest data. 
+   Presented below is some of the latest data.
    <br>
    CLICK THE BUTTONS BELOW TO SEE THE LATEST HEALTH AND MARKET DATA
    <BR>
