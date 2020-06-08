@@ -91,7 +91,8 @@ def combined_data():
     jsonNewData5 = str(JSONEncoder().encode(newData))
     #print("swine flue data ")
     #print(jsonNewData4)
-    return render_template('combined_data.html', data = jsonNewData5)   
+    return render_template('combined_data.html', data = jsonNewData5)
+
 
 @app.route('/coronavirus')
 def coronavirus():
@@ -102,7 +103,7 @@ def coronavirus():
     dowData = fred.get_series_latest_release('DJIA')
     result = pd.concat([goldData, dowData], axis=1, sort=False)
     dgdata = result.apply (pd.to_numeric, errors='coerce')
-    df = dgdata.dropna(how='any',axis=0) 
+    df = dgdata.dropna(how='any',axis=0)
     df['dowoverGold'] = df[1] / df[0]
     resultdata = df.tail(90)
     resultdata = resultdata.round(2)
@@ -115,6 +116,10 @@ def coronavirus():
     #resultresultdata.itterrows()
     print(rdata)
     return render_template('coronavirus.html', data = rdata)
+
+@app.route('/conclusions')
+def conclusions():
+    return render_template('conclusions.html')
 
 # run the app
 if __name__ == '__main__':
