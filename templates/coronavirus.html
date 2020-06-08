@@ -16,7 +16,7 @@
     <style>
 
   body {
-  background-image: url("{{url_for('static', filename='/imgs/covid.jpg')}}");
+  background-image: url("{{url_for('static', filename='/imgs/covid19.jpg')}}");
   background-size: 440px;
   background-repeat: repeat-y;
 }
@@ -70,7 +70,8 @@
 <div class="container text-left">
   <div class="row">
     <div class="col-sm-4">
-      <h1 style=font-size:62px>Coronavirus </h1>
+      <h1 style=font-size:62px>Coronavirus</h1>
+
       <div>
         <!-- <img src="{{url_for('static', filename='/imgs/covid.jpg')}}" alt="CORONAVIRUS"> -->
        </div>
@@ -85,6 +86,7 @@
           Data source is the NYTIMES github of coronavirus data and the St Louis Fed API . Fresh Data is retrieved each time the page is reloaded.
           <br>
          </p>
+         <p>Covid 19 2019 dec -present 393,000 (june 7th) SARS COV 2 virus</p>
        <div>
         <button id = "myButton" type="button" class="btn btn-secondary" onClick="apiData('myPlot', {{ data }})">Click to Show Latest DOW/GOLD Data</button>
  </div>
