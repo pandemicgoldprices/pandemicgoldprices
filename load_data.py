@@ -1,5 +1,4 @@
-
-# import what we need
+# import dependencies
 import pymongo
 import pandas as pd
 import numpy as np
@@ -46,9 +45,9 @@ def load():
     dataOut = db.find().sort('_id', -1)
     # count the records
     results_count = str(dataOut.count())
-    print("results count :" + results_count)
+    # print("results count :" + results_count)
     # display top record
-    print(dataOut[0])
+    # print(dataOut[0])
 
     db2.insert_many(data2)
 
@@ -56,6 +55,6 @@ def load():
     dataOut2 = db2.find().sort('_id', -1)
     # count the records
     results_count2 = str(dataOut2.count())
-    print("results count deaths :" + results_count2)
+    # print("results count deaths :" + results_count2)
     # display top record
-    print(dataOut2[0])
+    # print(dataOut2[0])

@@ -32,9 +32,9 @@ def getLatest():
     dataOut = db.find().sort('_id', -1)
     # count the records
     results_count = str(dataOut.count())
-    print("results count :" + results_count)
+    # print("results count :" + results_count)
     # display top record
-    print(dataOut[0])
+    # print(dataOut[0])
 
 def getRangeDowData(yearstart, yearend):
     conn = 'mongodb://localhost:27017'
@@ -51,13 +51,13 @@ def getRangeDowData(yearstart, yearend):
         search = db.find( { 'year': i } )
         for x in search:
               data.append(x)
-    print("here")
+    # print("here")
     #print(data)
     return data
 
 
 def getMonthlyDeathsData():
-    print("hello")
+    # print("hello")
     data = []
     conn = 'mongodb://localhost:27017'
     client = pymongo.MongoClient(conn)
@@ -65,7 +65,7 @@ def getMonthlyDeathsData():
     search = db.find()
     for record in search:
         data.append(record)
-    print(data)
+    # print(data)
     return data
 
 getMonthlyDeathsData()
