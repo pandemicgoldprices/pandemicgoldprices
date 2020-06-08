@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <title>Swine Flu</title>
     <script src="http://d3js.org/d3.v5.min.js" charset="utf-8"></script>
-    <script src="{{url_for('static', filename='renderPlotly-tweak.js')}}"></script>
+    <script src="{{url_for('static', filename='renderPlotly.js')}}"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-
+    
     <style>
     /* Remove the navbar's default margin-bottom and rounded borders */
         .navbar {
@@ -34,59 +34,81 @@
         }
       }
       </style>
+      </head>
     <body>
         <nav class="navbar navbar-default">
             <div class="container-fluid">
               <div class="navbar-header">
-                <a class="navbar-brand" href="/">Gold Diggers</a>
+                <a class="navbar-brand" href="introduction.html">Gold Diggers</a>
               </div>
               <ul class="nav navbar-nav">
-                <li ><a href="dashboard">Dashboard</a></li>
-                <li><a href="spanish_flu">Spanish Flu</a></li>
-                <li><a href="asian_flu">Asian Flu</a></li>
-                <li><a href="hong_kong_flu">Hong Kong Flu</a></li>
-                <li class="active"><a href="swine_flu">Swine Flu</a></li>
-                <li><a href="coronavirus">COVID-19</a></li>
-                <li><a href="combined_data">Charts</a></li>
-                <li><a href="conclusions">Conclusions</a></li>
+                <li class="active"><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/spanish_flu">Spanish Flu</a></li>
+                <li><a href="/asian_flu">Asian Flu</a></li>
+                <li><a href="/hong_kong_flu">Hong Kong Flu</a></li>
+                <li><a href="/swine_flu">Swine Flu</a></li>
+                <li><a href="/coronavirus">COVID-19</a></li>
               </ul>
             </div>
           </nav>
+          <body>
           <style>
-            body {
-            background-image: url('H1N1.jpg');
+          
+           body  {
+          
+  background-image: url("{{url_for('static', filename='/imgs/covid19.jpg')}}");
+            
             background-position: center top;
-            background-size: 100% auto;
+            background-size: cover;
+           
+
+            }
           </style>
         <div class="container text-center">
-            <h3><style="color:white;"">DJIA vs. Gold Prices During the 1918 Pandemic (Swine Flu [H1N1])</h3>
+            <h3>DJIA vs. Gold Prices During the 1918 Pandemic (Swine Flu [H1N1])</h3>
             <br>
-
+            
           <div class="container-fluid">
                 <div class="row">
-             <div class="col-sm-3 col-md-6" style="background-color:black;">
-               <p>Lorem ipsum...</p>
+             <div class="col-sm-3 col-md-6" style="color:black;" style="background-color:white;">
+               <p>Emergency Declarations for H1N1
+
+The first U.S. infection of the novel type of influenza was identified in California on April 15, 2009.
+On April 25, the World Health Organization declared a public health emergency of international concern.
+The next day, the U.S. Department of Health and Human Services declared a public health emergency. (It was repeatedly renewed.)
+The U.S. Centers for Disease Control and Prevention reported the first fatality from the outbreak days later, on April 29.
+WHO declared H1N1 a pandemic on June 11.
+By Oct. 5, an H1N1 vaccine was ready and the first doses were given in the U.S.
+Obama weeks later declared a national emergency on Oct. 24, 2009. The CDC director, Dr. Thomas Frieden, said at the time that millions of people had been infected in the U.S. and more than 1,000 had died.</p>
              </div>
-              <div class="col-sm-9 col-md-6" style="background-color:white;">
-                <img src="../Images/logo.png" alt="Logo"/>
+
+              <div class="col-sm-9 col-md-6" style="background-color:transparent">
+                <img src="{{url_for('static', filename='/imgs/influenza.jpg')}}" class="img-circle" style="width:75%" />
+
                </div>
             </div>
           </div>
+          <div>
+            <br>
+            <br>
+          </div>
+            <div class="row">
+                <div class="col-sm-6"></div>
+                  <img src="DJIA_H1N1.jpg" alt="image" style="width:40%">
+            </div>  
 
-
-            <div class="well">
-            <p>Some text..</p>
-        </div>
+             
+        
         <div class="row">
               <div id ="swineDowGold">
               <div class="col-sm-12">
-                <button id = "myButtonOne" type="button" class="btn btn-secondary" onClick="renderDowOverGoldPlot('swineDowGold',{{ data }} )">Button One</button>
+                <button id = "myButtonOne" type="button" class="btn btn-secondary" onClick="renderDowOverGoldPlot('swineDowGold',{{ data }} )">Click to plot Dow Jones/GOLD ratio for SWINE FLU  </button>
               </div>
                  </div>
               </div>
             </div>
           <br>
-        <div class="col-md-8“
->
+        <div class="col-md-8“>
+
     </body>
 </html>
