@@ -63,6 +63,10 @@ def spanish_flu():
 def asian_flu():
     data = getLatest()
     return render_template('asian_flu.html', data = data)
+@app.route('/conclusions')
+def conclusions():
+    
+    return render_template('conclusions.html')
 
 @app.route('/hong_kong_flu')
 def hong_kong_flu():
