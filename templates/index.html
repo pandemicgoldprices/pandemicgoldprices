@@ -41,11 +41,11 @@
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="/">Gold Diggers</a>
+          <a class="active navbar-brand" href="/">Gold Diggers</a>
         </div>
         <ul class="nav navbar-nav">
           <li ><a href="dashboard">Dashboard</a></li>
-          <li class="active"><a href="spanish_flu">Spanish Flu</a></li>
+          <li ><a href="spanish_flu">Spanish Flu</a></li>
           <li><a href="asian_flu">Asian Flu</a></li>
           <li><a href="hong_kong_flu">Hong Kong Flu</a></li>
           <li><a href="swine_flu">Swine Flu</a></li>
@@ -60,17 +60,17 @@
       <div class="item active" role="listbox">
         <img src="{{url_for('static', filename='/imgs/pangdcollage.jpg')}}" alt="First Slide">
         <div class="carousel-caption">
-          <h3>Project 2 - "Gold Diggers"</h3>
+          <h3>Project - "Gold Diggers"</h3>
           <p>Study of 100-Year DJIA Prices vs. Gold Prices</p>
         </div>
       </div>
       <div class="item">
-        <img  src="{{url_for('static', filename='/imgs/diggers.jpg')}}" alt="Second Slide">
+        <img  src="{{url_for('static', filename='/imgs/diggers.jpg')}}"  alt="Second Slide">
         <div class="carousel-caption">
         </div>
       </div>
       <div class="item">
-        <img src="{{url_for('static', filename='/imgs/thepriceofgold.jpg')}}" alt="Third Slide">
+        <img src="{{url_for('static', filename='/imgs/thepriceofgold.jpg')}}" style="width:100%" alt="Third Slide">
         <div class="carousel-caption">
         </div>
       </div>
@@ -133,24 +133,24 @@
   </div>-->
 
   <div class="container text-center">
-    <h3>Pandemics Through the Years</h3><br>
+    <h3>Study of Pandemics vs. Gold Prices 100 Yeasrs</h3><br>
     <div class="row">
       <div class="col-sm-4">
-        <img src="{{url_for('static', filename='spanishflue.jpg')}}" class="img-responsive" style="width:100%" alt="Spanish Flu Image">
-        <p>Image Caption</p>
+        <img src="{{url_for('static', filename='imgs/spafluThumb.jpg')}}" class="img-responsive" style="width:90%" alt="Spanish Flu Image">
+        <p>Spanish Flu 1918</p>
       </div>
       <div class="col-sm-4">
-        <img src="{{url_for('static', filename='Asianflu.jpg')}}" class="img-responsive" style="width:100%" alt="Asian Flu Image">
-        <p>Image Caption</p>
+        <img src="{{url_for('static', filename='Asianflu.jpg')}}" class="img-responsive" style="width:90%" alt="Asian Flu Image">
+        <p>Asian Flu 1957</p>
       </div>
       <div class="col-sm-4">
-          <img src="{{url_for('static', filename='swine.jpg')}}" class="img-responsive" style="width:100%" alt="Swine Flu Image">
-          <p>Image Caption</p>
+          <img src="{{url_for('static', filename='swine.jpg')}}" class="img-responsive" style="width:90%" alt="Swine Flu Image">
+          <p>Swine Flu 2009</p>
       </div>
     </div>
     <br>
     <footer class="container-fluid text-center">
-      <p>Image Sources: </p>
+      <p></p>
     </footer>
   </body>
 </html>
