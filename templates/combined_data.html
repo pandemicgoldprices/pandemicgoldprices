@@ -15,6 +15,14 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <style>
     /* Remove the navbar's default margin-bottom and rounded borders */
+
+    body {
+  background-image: url("{{url_for('static', filename='/imgs/covid19.jpg')}}");
+
+  background-size: 250px;
+  background-repeat: repeat-x;
+}
+
         .navbar {
           margin-bottom: 0;
           border-radius: 0;
@@ -61,47 +69,50 @@
 
 
  <br>
- <div>
-    Spanish Flu	1918 jan –1920 dec 	50 million dead	H1N1 virus
+
+  <h1 style=font-size:62px>Visualisations</h1>
+  <br>
+
+  <div>
+
     <br>
-    Asian Flu	1957 jan –1958	1.5 to 2 million dead	H2N2 virus
     <br>
-    Hong Kong Flu	1968 july – 1970 march	1 million dead	H3N2 virus
     <br>
-    Swine Flu	2009 april –2010	over 284,000	dead novel H1N1 virus
+
     <br>
-    Covid 19 2019 dec -present 393,000 (june 7th) SARS COV 2 virus
+
 
  </div>
 
  <div class="col-sm-8">
 
-  <h3>Visualisations</h3>
-  <br>
-
-
 
   <div class="container">
       <div class="col-md-6" style="padding-left: 0px;  padding-right: 0px;">
-        <img src="{{url_for('static', filename='/imgs/combined/spanish.png')}}"  class="img-responsive">
+        <img src="{{url_for('static', filename='/imgs/combined/spanish.png')}}"  class="img-responsive"> <br>
+        <p>    Spanish Flu	1918 jan –1920 dec 	50 million dead	H1N1 virus</p>
       </div>
       <div class="col-md-6" style="padding-left: 0px;  padding-right: 0px;">
-        <img src="{{url_for('static', filename='/imgs/combined/asianflu.png')}}"  class="img-responsive">
+        <img src="{{url_for('static', filename='/imgs/combined/asianflu.png')}}"  class="img-responsive"><br>
+        <p>    Asian Flu	1957 jan –1958	1.5 to 2 million dead	H2N2 virus        </p>
       </div>
   </div>
 
   <div class="container">
       <div class="col-md-6" style="padding-left: 0px;  padding-right: 0px;">
-        <img src="{{url_for('static', filename='/imgs/combined/hkflu.png')}}"  class="img-responsive">
+        <img src="{{url_for('static', filename='/imgs/combined/hkflu.png')}}"  class="img-responsive"><br>
+        <p>    Hong Kong Flu	1968 july – 1970 march	1 million dead	H3N2 virus        </p>
       </div>
       <div class="col-md-6" style="padding-left: 0px;  padding-right: 0px;">
-        <img src="{{url_for('static', filename='/imgs/combined/swineflu.png')}}"  class="img-responsive">
+        <img src="{{url_for('static', filename='/imgs/combined/swineflu.png')}}"  class="img-responsive"><br>
+        <p></p>
       </div>
   </div>
 
   <div class="container">
     <div class="col-md-6" style="padding-left: 0px;  padding-right: 0px;">
-      <img src="{{url_for('static', filename='/imgs/combined/covid.png')}}"  class="img-responsive">
+      <img src="{{url_for('static', filename='/imgs/combined/covid.png')}}"  class="img-responsive"> <br>
+      <p>Swine Flu	2009 april –2010	over 284,000	dead novel H1N1 virus</p>
     </div>
     <div class="col-md-6" style="padding-left: 0px;  padding-right: 0px;">
       <img src="{{url_for('static', filename='/imgs/combined/deathsratiorealgold.png')}}"  class="img-responsive">
@@ -110,7 +121,8 @@
 
 <div class="container">
   <div class="col-md-6" style="padding-left: 0px;  padding-right: 0px;">
-    <img src="{{url_for('static', filename='/imgs/combined/dowdivrealgoldvscpi.png')}}"  class="img-responsive">
+    <img src="{{url_for('static', filename='/imgs/combined/dowdivrealgoldvscpi.png')}}"  class="img-responsive"><br>
+    <p>Covid 19 2019 dec -present 393,000 (june 7th) SARS COV 2 virus</p>
   </div>
   <div class="col-md-6" style="padding-left: 0px;  padding-right: 0px;">
     <img src="{{url_for('static', filename='/imgs/combined/World_Gold_production_1900-2014.png')}}"  class="img-responsive">
