@@ -37,13 +37,25 @@ def getLatest():
     # print(dataOut[0])
 
 def getRangeDowData(yearstart, yearend):
-    conn = 'mongodb://localhost:27017'
+    #conn = 'mongodb://localhost:27017'
 
     # Pass connection to the pymongo instance
-    client = pymongo.MongoClient(conn)
+    #client = pymongo.MongoClient(conn)
 
     # Connect to a database; will create one if not already available
     # This creates a schema called etlProject
+
+    client = pymongo.MongoClient("mongodb+srv://gold:pandemicgoldprices@cluster0-7msf5.gcp.mongodb.net/<dbname>?retryWrites=true&w=majority")
+    #db = client2.test
+
+    #conn = 'mongodb://localhost:27017'
+
+    # Pass connection to the pymongo instance.
+    #client = pymongo.MongoClient(conn)
+
+    # Connect to a database. Will create one if not already available.
+    #db = client.myDB.dowGoldHistory
+    #db2 = client.myDB.monthlydeaths
 
     db = client.myDB.dowGoldHistory
     data = []
@@ -59,9 +71,20 @@ def getRangeDowData(yearstart, yearend):
 def getMonthlyDeathsData():
     # print("hello")
     data = []
-    conn = 'mongodb://localhost:27017'
-    client = pymongo.MongoClient(conn)
+    client = pymongo.MongoClient("mongodb+srv://gold:pandemicgoldprices@cluster0-7msf5.gcp.mongodb.net/<dbname>?retryWrites=true&w=majority")
+    #db = client2.test
+
+    #conn = 'mongodb://localhost:27017'
+
+    # Pass connection to the pymongo instance.
+    #client = pymongo.MongoClient(conn)
+
+    # Connect to a database. Will create one if not already available.
+    #db = client.myDB.dowGoldHistory
     db = client.myDB.monthlydeaths
+    #conn = 'mongodb://localhost:27017'
+    #client = pymongo.MongoClient(conn)
+    #db = client.myDB.monthlydeaths
     search = db.find()
     for record in search:
         data.append(record)
