@@ -21,10 +21,14 @@ def load():
     # COMBINED_df = COMBINED_df.rename(columns={'nominal_price_USD': 'gold_nominal_price_USD'})
 
     # print(COMBINED_df)
-    conn = 'mongodb://localhost:27017'
+    
+    client = pymongo.MongoClient("mongodb+srv://gold:pandemicgoldprices@cluster0-7msf5.gcp.mongodb.net/<dbname>?retryWrites=true&w=majority")
+    #db = client2.test
+
+    #conn = 'mongodb://localhost:27017'
 
     # Pass connection to the pymongo instance.
-    client = pymongo.MongoClient(conn)
+    #client = pymongo.MongoClient(conn)
 
     # Connect to a database. Will create one if not already available.
     db = client.myDB.dowGoldHistory
