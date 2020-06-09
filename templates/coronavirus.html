@@ -5,7 +5,6 @@
     <title>COVID-19</title>
     <script src="http://d3js.org/d3.v5.min.js" charset="utf-8"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-
     <script src="{{url_for('static', filename='index.js')}}"></script>
     <script src="{{url_for('static', filename='renderPlotly.js')}}"></script>
     <script src="{{url_for('static', filename='renderCountry.js')}}"></script>
@@ -14,122 +13,102 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <body onload="renderCountry()"></body>
-
     <!-- background-size: 440px;-->
     <style>
-
-  body {
-  background-image: url("{{url_for('static', filename='/imgs/covid19.jpg')}}");
-
-  background-size: 250px;
-  background-repeat: repeat-x;
-}
+    body {
+    background-image: url("{{url_for('static', filename='/imgs/covid19.jpg')}}");
+    background-size: 250px;
+    background-repeat: repeat-x;
+  }
     /* Remove the navbar's default margin-bottom and rounded borders */
-        .navbar {
-          margin-bottom: 0;
-          border-radius: 0;
-        }
-
-        /* Add a gray background color and some padding to the footer */
-        footer {
-          background-color: #f2f2f2;
-          padding: 25px;
-        }
-
-      .carousel-inner img {
-          width: 100%; /* Set width to 100% */
-          margin: auto;
-          min-height:200px;
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+    .carousel-inner img {
+        width: 100%; /* Set width to 100% */
+        margin: auto;
+        min-height:200px;
+    }
+    /* Hide the carousel text when the screen is less than 600 pixels wide */
+    @media (max-width: 600px) {
+      .carousel-caption {
+        display: none;
       }
-
-      /* Hide the carousel text when the screen is less than 600 pixels wide */
-      @media (max-width: 600px) {
-        .carousel-caption {
-          display: none;
-        }
-      }
-      </style>
+    }
+    </style>
     <body>
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-              <div class="navbar-header">
-                <a class="navbar-brand" href="/">GSANALYTICS</a>
-              </div>
-              <ul class="nav navbar-nav">
-                <li><a href="dashboard">Dashboard</a></li>
-                <li><a href="spanish_flu">Spanish Flu</a></li>
-                <li><a href="asian_flu">Asian Flu</a></li>
-                <li><a href="hong_kong_flu">Hong Kong Flu</a></li>
-                <li><a href="swine_flu">Swine Flu</a></li>
-                <li class="active"><a href="coronavirus">COVID-19</a></li>
-                <li><a href="combined_data">Charts</a></li>
-                <li><a href="conclusions">Conclusions</a></li>
-              </ul>
+      <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="/">GSANALYTICS</a>
             </div>
-          </nav>
+            <ul class="nav navbar-nav">
+              <li><a href="dashboard">Dashboard</a></li>
+              <li><a href="spanish_flu">Spanish Flu</a></li>
+              <li><a href="asian_flu">Asian Flu</a></li>
+              <li><a href="hong_kong_flu">Hong Kong Flu</a></li>
+              <li><a href="swine_flu">Swine Flu</a></li>
+              <li class="active"><a href="coronavirus">COVID-19</a></li>
+              <li><a href="combined_data">Charts</a></li>
+              <li><a href="conclusions">Conclusions</a></li>
+            </ul>
+          </div>
+        </nav>
+        <br>
 
-
- <br>
-
-<div class="container text-left">
-  <div class="row">
-    <div class="col-sm-">
-      <h1 style=font-size:62px>Coronavirus</h1>
+      <div class="container text-left">
+        <div class="row">
+          <div class="col-sm-">
+            <h1 style=font-size:62px>Coronavirus</h1>
+          </div>
+        </div>
+      </div>
 
       <div>
         <!-- <img src="{{url_for('static', filename='/imgs/covid.jpg')}}" alt="CORONAVIRUS"> -->
-       </div>
-       <br>
-       <p>
-         Coranvirus started Dec 2019 in China. Despite the potential destruction to the economy as yet it is made little dent in markets.
-         <br>
-         Presented below is some of the latest data.
-         <br>
-         CLICK THE BUTTONS BELOW TO SEE THE LATEST HEALTH AND MARKET DATA
-         <BR>
-          Data source is the NYTIMES github of coronavirus data and the St Louis Fed API . Fresh Data is retrieved each time the page is reloaded.
-          <br>
-         </p>
-         <p>Covid 19 2019 dec -present 393,000 (june 7th) SARS COV 2 virus</p>
-         <br>
-         <H3> RECENT CHANGES IN RATIO OF DOW/GOLD FROM ST LOUIS FED API </H3>
-       <div>
-        <button id = "myButton" type="button" class="btn btn-secondary" onClick="apiData('myPlot', {{ data }})">Click to Show Latest DOW/GOLD Data</button>
- </div>
-</div>
-
-<div class="container">
-  <div class="row">
-    <div class="col-sm-12">
-
-      <div id ="myPlot"></div>
-      <H3> LATEST US COVID 19 DATA FROM NYTIMES:  </H3>
-
-      <H3> DAILY US CASES </H3>
-      <div id ="dailycases"></div>
-      <H3> DAILY US DEATHS </H3>
-      <div id ="dailydeaths"></div>
-      <H3> US CUMULATIVE CASES</H3>
-      <div id="cases"></div>
-      <H3> US CUMULATIVE DEATHS</H3>
-      <div id="deaths"></div>
+      </div>
+      <br>
+      <p>
+        The coronavirus started in Dec. of 2019 in China. Despite the potential destruction to the economy, as yet it has made little dent in markets.
+        <br>
+        Presented below is some of the latest data.
+        <br>
+        CLICK THE BUTTONS BELOW TO SEE THE LATEST HEALTH AND MARKET DATA
+        <br>
+        The data source is the NYT GitHub of coronavirus data and the St. Louis Federal Reserve API. Fresh Data is retrieved each time the page is reloaded.
+        <br>
+      </p>
+      <p>
+        Covid 19 2019 dec -present 393,000 (june 7th) SARS COV 2 virus
+      </p>
+      <br>
+      <H3>RECENT CHANGES IN RATIO OF DJIA/GOLD FROM ST. LOUIS FED API</H3>
+      <div>
+        <button id="myButton" type="button" class="btn btn-secondary" onClick="apiData('myPlot', {{ data }})">Click to Show Latest Dow/Gold Data</button>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div id ="myPlot"></div>
+            <h3>LATEST US COVID-19 DATA FROM NYT:</h3>
+            <h3>DAILY US CASES</h3>
+            <div id ="dailycases"></div>
+            <h3> DAILY US DEATHS </h3>
+            <div id ="dailydeaths"></div>
+            <h3>US CUMULATIVE CASES</h3>
+            <div id="cases"></div>
+            <h3>US CUMULATIVE DEATHS</h3>
+            <div id="deaths"></div>
           </div>
         </div>
-</div>
-  </div>
-</div>
-
-
-
-
-
-
-<!--
-          <footer class="container-fluid text-center">
-            <p>Footer Text</p>
-          </footer>
-        -->
+      </div>
+<!-- <footer class="container-fluid text-center"><p>Footer Text</p></footer> -->
     </body>
-
+</head>
 </html>
-
